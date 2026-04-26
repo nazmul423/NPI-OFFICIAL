@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Engineering | NPI Digital Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --npi-red: #ed1c24;
+            --npi-blue: #2e3192;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #fcfcfc;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 1000;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -4px;
+            z-index: 1100;
+        }
+
+        .group-hover-submenu:hover .submenu {
+            display: block;
+        }
+
+        .semester-card {
+            border-top: 4px solid var(--npi-red);
+            transition: all 0.3s ease;
+        }
+
+        .semester-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header (Same as Index with correct paths) -->
+     <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
+            <!-- Logo -->
+            <a href="../index.html">
+                <img src="../images/Cover Page -Operating System-F.jpg" alt="NPI Logo" class="h-16">
+            </a>
+
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-700 uppercase text-sm items-center">
+                <a href="../index.html" class="text-red-main">Home</a>
+
+                <!-- About Us Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="../at-a-glance.html" class="hover:text-red-main transition flex items-center">
+                        About Us <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown Menu Box -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-64 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50 overflow-hidden">
+                        <li>
+                            <a href="../at-a-glance.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bolt mr-2 text-[10px]"></i> At A Glance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../history.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-history mr-2 text-[10px]"></i> History of NPI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../mission-vision.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bullseye mr-2 text-[10px]"></i> Mission and Vision
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../administration.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-user-tie mr-2 text-[10px]"></i> Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../photo-gallery.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                <i class="fas fa-image mr-2 text-[10px]"></i> Photo Gallery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admission Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Admission <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Main Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+
+                        <!-- Nested Dropdown: Departments (Hover to see technology list) -->
+                        <li class="relative group-hover-submenu">
+                            <a href="#"
+                                class="flex justify-between items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                Departments <i class="fas fa-chevron-right text-[10px]"></i>
+                            </a>
+
+                            <!-- Sub-menu (List of Technologies for Details Page) -->
+                            <ul class="submenu bg-white shadow-2xl rounded-md w-72 border-t-4 border-red-600">
+                                <li><a href="../Details Admisson Page/computer-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Computer
+                                        Engineering</a></li>
+                                <li><a href="../Details Admisson Page/civil-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Civil
+                                        Engineering</a></li>
+                                <li><a href="electrical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Electrical
+                                        Engineering</a></li>
+                                <li><a href="architecture-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Architecture
+                                        Engineering</a></li>
+                                <li><a href="telecom-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Telecommunication
+                                        Engineering</a></li>
+                                <li><a href="apparel-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Apparel
+                                        Manufacturing</a></li>
+                                <li><a href="textile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Textile
+                                        Engineering</a></li>
+                                <li><a href="graphics-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Graphics
+                                        Design</a></li>
+                                <li><a href="electronics-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Electronics
+                                        Engineering</a></li>
+                                <li><a href="tourism-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Tourism
+                                        & Hospitality</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Other Admission Items -->
+                        <li><a href="../admissonform.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Online
+                                Admission</a></li>
+
+                        <li><a href="../circular.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Admission
+                                Circular</a></li>
+                        <li><a href="../campus-life.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Campus
+                                Life</a></li>
+
+                        <li><a href="../tuition-fees.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Tuition
+                                Fees</a></li>
+
+
+                    </ul>
+                </div>
+                <!-- Academic Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Academic <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Academic Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100"><a href="../notice-board.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Notice
+                                Board</a></li>
+                        <li class="border-b border-gray-100"><a href="../syllabus.html."
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Course
+                                & Syllabus</a></li>
+                        <li class="border-b border-gray-100"><a href="../class-routine.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Student
+                                Routine</a></li>
+                        <li class="border-b border-gray-100"><a href="../academic-calendar.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Academic
+                                Calendar</a></li>
+
+                        <li class="border-b border-gray-100"><a href="../internal-result.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                BTEB Result </a></li>
+
+                    </ul>
+                </div>
+                <!-- Blogs Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="../news-blogs.html"
+                        class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Blogs <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-56 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100">
+                            <a href="../news-blogs.html?filter=news"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Latest
+                                News</a>
+                        </li>
+                        <li>
+                            <a href="../news-blogs.html?filter=blog"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Our
+                                Blogs</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="hover:text-red-main">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-3 text-blue-800">
+                    <i class="fab fa-facebook cursor-pointer"></i>
+                    <i class="fab fa-youtube cursor-pointer"></i>
+                    <i class="fab fa-linkedin cursor-pointer hover:text-red-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Page Banner -->
+        <section class="bg-gray-900 py-24 text-center text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30"
+                style="background-image: url('../images/civil-banner.jpg');"></div>
+            <div class="relative z-10">
+                <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight">Civil Engineering</h1>
+                <p class="text-xs mt-3 font-bold text-red-500 uppercase tracking-widest">Home / Academic / Civil Details
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="max-w-7xl mx-auto px-4 py-20">
+            <div class="grid lg:grid-cols-12 gap-16">
+
+                <!-- Left: Technology Info -->
+                <div class="lg:col-span-8 space-y-12">
+
+                    <!-- Introduction -->
+                    <div class="space-y-4">
+                        <h2 class="text-3xl font-extrabold text-[#1d4289] border-l-8 border-red-600 pl-5 uppercase">
+                            Introduction</h2>
+                        <p class="text-gray-600 text-lg leading-relaxed text-justify italic">
+                            Civil Engineering is one of the oldest and most significant branches of engineering. It
+                            deals with the design, construction, and maintenance of the physical and naturally built
+                            environment. Particularly for students at NPI Manikganj, this branch offers huge career
+                            opportunities in developing roads, bridges, canals, and modern infrastructure.
+                        </p>
+                    </div>
+
+                    <!-- The Essence of Civil Engineering -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-6 bg-white border rounded-2xl shadow-sm hover:border-red-600 transition">
+                            <i class="fas fa-building text-2xl text-red-600 mb-4"></i>
+                            <h4 class="font-bold text-gray-800 mb-2">Structural Engineering</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Focuses on ensuring that buildings and
+                                bridges are safe and durable under various loads.</p>
+                        </div>
+                        <div class="p-6 bg-white border rounded-2xl shadow-sm hover:border-red-600 transition">
+                            <i class="fas fa-mountain text-2xl text-red-600 mb-4"></i>
+                            <h4 class="font-bold text-gray-800 mb-2">Geotechnical Engineering</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Study of soil and rock behavior vital for
+                                the safe design of foundations and walls.</p>
+                        </div>
+                        <div class="p-6 bg-white border rounded-2xl shadow-sm hover:border-red-600 transition">
+                            <i class="fas fa-road text-2xl text-red-600 mb-4"></i>
+                            <h4 class="font-bold text-gray-800 mb-2">Transportation Engineering</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Design and maintenance of roads, highways,
+                                and railways for modern transport.</p>
+                        </div>
+                        <div class="p-6 bg-white border rounded-2xl shadow-sm hover:border-red-600 transition">
+                            <i class="fas fa-tint text-2xl text-red-600 mb-4"></i>
+                            <h4 class="font-bold text-gray-800 mb-2">Water Resources Engineering</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Management of water resources including
+                                design of dams and distribution systems.</p>
+                        </div>
+                    </div>
+
+                    <!-- Course Outline (Semester Wise) -->
+                    <div class="space-y-8 pt-10">
+                        <h2 class="text-3xl font-extrabold text-[#1d4289] uppercase tracking-tight">Civil Course Outline
+                        </h2>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Semester 1 -->
+                            <div class="semester-card bg-white p-6 rounded-2xl shadow-sm">
+                                <h4 class="font-black text-red-600 mb-4 border-b pb-2">SEMESTER-1</h4>
+                                <ul class="text-sm text-gray-600 space-y-2 font-medium">
+                                    <li>• Engineering drawing (61011)</li>
+                                    <li>• Physics‐1 (65912)</li>
+                                    <li>• Mathematics‐1 (65911)</li>
+                                    <li>• Workshop practice (67012)</li>
+                                    <li>• Electrical engineering fundamental (66712)</li>
+                                    <li>• English (65712) & Bangla (65711)</li>
+                                </ul>
+                            </div>
+                            <!-- Semester 2 -->
+                            <div class="semester-card bg-white p-6 rounded-2xl shadow-sm">
+                                <h4 class="font-black text-red-600 mb-4 border-b pb-2">SEMESTER-2</h4>
+                                <ul class="text-sm text-gray-600 space-y-2 font-medium">
+                                    <li>• Civil engineering materials (66421)</li>
+                                    <li>• Mathematics‐2 (65921)</li>
+                                    <li>• Communicative English (65722)</li>
+                                    <li>• Computer application (66611)</li>
+                                    <li>• Physics‐2 (65922)</li>
+                                    <li>• Electronic engineering fundamentals (66822)</li>
+                                </ul>
+                            </div>
+                            <!-- Semester 3 -->
+                            <div class="semester-card bg-white p-6 rounded-2xl shadow-sm">
+                                <h4 class="font-black text-red-600 mb-4 border-b pb-2">SEMESTER-3</h4>
+                                <ul class="text-sm text-gray-600 space-y-2 font-medium">
+                                    <li>• Civil engineering drawing‐1 (66431)</li>
+                                    <li>• Construction process‐1 (66433)</li>
+                                    <li>• Surveying‐1 (66432)</li>
+                                    <li>• Mathematics‐3 (65931)</li>
+                                    <li>• Civil workshop practice (66434)</li>
+                                    <li>• Social science & Chemistry</li>
+                                </ul>
+                            </div>
+                            <!-- Semester 4 -->
+                            <div class="semester-card bg-white p-6 rounded-2xl shadow-sm">
+                                <h4 class="font-black text-red-600 mb-4 border-b pb-2">SEMESTER-4</h4>
+                                <ul class="text-sm text-gray-600 space-y-2 font-medium">
+                                    <li>• Structural mechanics (66441)</li>
+                                    <li>• Surveying‐2 (66444)</li>
+                                    <li>• Estimating & costing‐1 (66442)</li>
+                                    <li>• Environmental studies (69054)</li>
+                                    <li>• Geotechnical engineering (66445)</li>
+                                    <li>• Civil engineering drawing‐2 (CAD)</li>
+                                </ul>
+                            </div>
+                            <!-- Semester 5 -->
+                            <div class="semester-card bg-white p-6 rounded-2xl shadow-sm">
+                                <h4 class="font-black text-red-600 mb-4 border-b pb-2">SEMESTER-5</h4>
+                                <ul class="text-sm text-gray-600 space-y-2 font-medium">
+                                    <li>• Construction process‐2 (66451)</li>
+                                    <li>• Theory of structure (66454)</li>
+                                    <li>• Surveying‐3 (66452)</li>
+                                    <li>• Hydraulics (66456)</li>
+                                    <li>• Water supply engineering (66453)</li>
+                                    <li>• Estimating & costing‐2 (66455)</li>
+                                    <li>• Accounting Theory & Practice</li>
+                                </ul>
+                            </div>
+                            <!-- Semester 6 -->
+                            <div class="semester-card bg-white p-6 rounded-2xl shadow-sm">
+                                <h4 class="font-black text-red-600 mb-4 border-b pb-2">SEMESTER-6</h4>
+                                <ul class="text-sm text-gray-600 space-y-2 font-medium">
+                                    <li>• Advance surveying (66461)</li>
+                                    <li>• Design of structure‐1 (66463)</li>
+                                    <li>• Transportation engineering‐1 (66462)</li>
+                                    <li>• Foundation engineering (66465)</li>
+                                    <li>• Civil engineering drawing‐3 (CAD)</li>
+                                    <li>• Industrial Management (65852)</li>
+                                    <li>• Civil engineering software (66466)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Semester 7 (Highlight Box) -->
+                        <div class="semester-card bg-[#1d4289] p-8 rounded-3xl shadow-xl text-white">
+                            <h4 class="font-black text-red-500 mb-4 border-b border-white/10 pb-2 uppercase">SEMESTER-7
+                                (Final)</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <ul class="text-sm space-y-2 font-bold italic">
+                                    <li>• Construction management (68873)</li>
+                                    <li>• Transportation engineering‐2 (66473)</li>
+                                    <li>• Sanitary engineering (66472)</li>
+                                    <li>• Water resources engineering (66475)</li>
+                                </ul>
+                                <ul class="text-sm space-y-2 font-bold italic">
+                                    <li>• Design of structure-2 (66474)</li>
+                                    <li>• Innovation & Entrepreneurship</li>
+                                    <li>• Civil engineering project (66476)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Sidebar -->
+                <div class="lg:col-span-4 space-y-10">
+                    <!-- Eligibility Box -->
+                    <div class="bg-white p-8 rounded-[40px] shadow-lg border border-gray-100 border-t-8 border-red-600">
+                        <h4 class="text-xl font-black text-gray-800 uppercase mb-6 tracking-tight">Admission Eligibility
+                        </h4>
+                        <ul class="space-y-4 text-sm text-gray-600 font-medium leading-relaxed">
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> Minimum SSC
+                                GPA: 2.00</li>
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> HSC Science
+                                directly join 3rd Sem</li>
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> HSC Voc
+                                directly join 4th Sem</li>
+                        </ul>
+                    </div>
+
+                    <!-- Lab Box -->
+                    <div class="bg-gray-900 p-8 rounded-[40px] shadow-xl text-white">
+                        <h4 class="text-xl font-bold uppercase mb-6 border-b border-white/10 pb-2">Civil Lab Facilities
+                        </h4>
+                        <ul class="space-y-3 text-[11px] font-bold uppercase tracking-[0.2em] text-red-400">
+                            <li><i class="fas fa-compass mr-2"></i> Surveying Lab</li>
+                            <li><i class="fas fa-tint mr-2"></i> Hydraulics Lab</li>
+                            <li><i class="fas fa-drafting-compass mr-2"></i> AutoCAD Studio</li>
+                            <li><i class="fas fa-tools mr-2"></i> Concrete & Materials Lab</li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA Admission -->
+                    <div class="bg-blue-50 p-8 rounded-[40px] text-center border border-blue-100">
+                        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Admission Help</p>
+                        <h3 class="text-2xl font-black text-[#1d4289]">01713-493246</h3>
+                        <a href="../admissonform.html"
+                            class="mt-6 block bg-red-600 text-white py-3 rounded-2xl font-black uppercase text-xs hover:bg-gray-900 transition">Apply
+                            Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 text-center mt-auto border-t-4 border-red-600">
+        <p class="text-[10px] font-bold uppercase tracking-[0.5em] opacity-40">© 2024 National Polytechnic Institute |
+            Civil Engineering Department</p>
+    </footer>
+
+</body>
+
+</html>

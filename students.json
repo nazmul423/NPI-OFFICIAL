@@ -1,0 +1,2322 @@
+[
+    {
+        "technology": "Computer Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10
+        },
+        "semesters": [
+            {
+                "semester": "1st",
+                "student": {
+                    "name": "Nazmul Hasan",
+                    "roll": "944601"
+                },
+                "subjects": [
+                    {
+                        "name": "Programming Essentials",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Basic Electrical Engineering",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "semester": "2nd",
+                "student": {
+                    "name": "Siam Ahmed",
+                    "roll": "944602"
+                },
+                "subjects": [
+                    {
+                        "name": "Web Design",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Computer Application",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    },
+                    {
+                        "name": "Analog Electronics",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            },
+            {
+                "semester": "3rd",
+                "student": {
+                    "name": "Rakib Hossain",
+                    "roll": "944603"
+                },
+                "subjects": [
+                    {
+                        "name": "Python Programming",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "Database Management System-1",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Digital Electronics",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 25
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "semester": "4th",
+                "student": {
+                    "name": "Tanvir Islam",
+                    "roll": "944604"
+                },
+                "subjects": [
+                    {
+                        "name": "Data Structure & Algorithm",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Web Development-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Computer Architecture",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Object Oriented Programming (Java)",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Data Communication",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "semester": "5th",
+                "student": {
+                    "name": "Mehedi Hasan",
+                    "roll": "944605"
+                },
+                "subjects": [
+                    {
+                        "name": "Operating System",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Database Management System-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Web Development-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Software Engineering",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Microprocessor & Interfacing",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    }
+                ]
+            },
+            {
+                "semester": "6th",
+                "student": {
+                    "name": "Arif Rahman",
+                    "roll": "944606"
+                },
+                "subjects": [
+                    {
+                        "name": "Computer Network",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "System Analysis & Design",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Cyber Security",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mobile Application Development",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "Artificial Intelligence",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "semester": "7th",
+                "student": {
+                    "name": "Fahim Chowdhury",
+                    "roll": "944607"
+                },
+                "subjects": [
+                    {
+                        "name": "Web Service & E-Commerce",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Network Administration & Services",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Internet of Things (IoT)",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Apps Development Project",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject (Technology Based)",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "technology": "Electrical Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10
+        },
+        "semesters": [
+            {
+                "semester": "1st",
+                "student": {
+                    "name": "Rafiul Islam",
+                    "roll": "954601"
+                },
+                "subjects": [
+                    {
+                        "name": "Basic Electricity",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Engineering Drawing",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "semester": "2nd",
+                "student": {
+                    "name": "Sabbir Ahmed",
+                    "roll": "954602"
+                },
+                "subjects": [
+                    {
+                        "name": "Electrical Circuits-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Electrical Appliance",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 25
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            },
+            {
+                "semester": "3rd",
+                "student": {
+                    "name": "Mahadi Hasan",
+                    "roll": "954603"
+                },
+                "subjects": [
+                    {
+                        "name": "Electrical Circuits-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Electrical Engineering Materials",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Analog Electronics-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Computer Application",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "semester": "4th",
+                "student": {
+                    "name": "Imran Hossain",
+                    "roll": "954604"
+                },
+                "subjects": [
+                    {
+                        "name": "DC Machines",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Electrical Installation",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Digital Electronics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Industrial Electronics",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Electrical Estimating & Costing",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "semester": "5th",
+                "student": {
+                    "name": "Jahid Hasan",
+                    "roll": "954605"
+                },
+                "subjects": [
+                    {
+                        "name": "AC Machines-1",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Generation of Electrical Power",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Transmission & Distribution-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Electrical Measurement & Instrument-1",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    },
+                    {
+                        "name": "Optional Subject-1",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            },
+            {
+                "semester": "6th",
+                "student": {
+                    "name": "Shakil Ahmed",
+                    "roll": "954606"
+                },
+                "subjects": [
+                    {
+                        "name": "AC Machines-2",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Transmission & Distribution-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Electrical Measurement & Instrument-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Switchgear & Protection",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject-2",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            },
+            {
+                "semester": "7th",
+                "student": {
+                    "name": "Faisal Rahman",
+                    "roll": "954607"
+                },
+                "subjects": [
+                    {
+                        "name": "Electrical Project",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Testing & Maintenance of Electrical Equipment",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Communication Engineering",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Power Plant Engineering",
+                        "credit": 3,
+                        "midterm_marks": 19
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject-3",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "technology": "Civil Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10,
+            "1_credit": 10
+        },
+        "semesters": [
+            {
+                "student": {
+                    "name": "Mahmudul Hasan",
+                    "roll": "864601",
+                    "technology": "Civil Technology",
+                    "semester": "1st"
+                },
+                "subjects": [
+                    {
+                        "name": "Civil Engineering Materials",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Engineering Drawing",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Physical Education & Life Skills",
+                        "credit": 1,
+                        "midterm_marks": 10
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Riyad Ahmed",
+                    "roll": "864602",
+                    "technology": "Civil Technology",
+                    "semester": "2nd"
+                },
+                "subjects": [
+                    {
+                        "name": "Civil Engineering Drawing-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Surveying-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Sakib Khan",
+                    "roll": "864603",
+                    "technology": "Civil Technology",
+                    "semester": "3rd"
+                },
+                "subjects": [
+                    {
+                        "name": "Structural Mechanics",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Surveying-2",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Civil Engineering Drawing-2 (CAD)",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Construction Process-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Nayeem Islam",
+                    "roll": "864604",
+                    "technology": "Civil Technology",
+                    "semester": "4th"
+                },
+                "subjects": [
+                    {
+                        "name": "Theory of Structure",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Surveying-3",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Estimating & Costing-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Construction Process-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Geotechnical Engineering",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Shihab Uddin",
+                    "roll": "864605",
+                    "technology": "Civil Technology",
+                    "semester": "5th"
+                },
+                "subjects": [
+                    {
+                        "name": "Design of Structure-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Hydraulics",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Estimating & Costing-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Transportation Engineering-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Water Supply Engineering",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Arman Hossain",
+                    "roll": "864606",
+                    "technology": "Civil Technology",
+                    "semester": "6th"
+                },
+                "subjects": [
+                    {
+                        "name": "Design of Structure-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Foundation Engineering",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Transportation Engineering-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Civil Engineering Project-1",
+                        "credit": 2,
+                        "midterm_marks": 10
+                    },
+                    {
+                        "name": "Sanitary Engineering",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Fahim Rahman",
+                    "roll": "864607",
+                    "technology": "Civil Technology",
+                    "semester": "7th"
+                },
+                "subjects": [
+                    {
+                        "name": "Civil Engineering Project-2",
+                        "credit": 4,
+                        "midterm_marks": 30
+                    },
+                    {
+                        "name": "Construction Management",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Professional Practice",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Irrigation & Flood Control",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject (Hydraulic Structure/Other)",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "technology": "Mechanical Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10,
+            "1_credit": 10
+        },
+        "semesters": [
+            {
+                "student": {
+                    "name": "Rakib Hasan",
+                    "roll": "874601",
+                    "technology": "Mechanical Technology",
+                    "semester": "1st"
+                },
+                "subjects": [
+                    {
+                        "name": "Mechanical Workshop Practice",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Engineering Drawing",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Sabbir Ahmed",
+                    "roll": "874602",
+                    "technology": "Mechanical Technology",
+                    "semester": "2nd"
+                },
+                "subjects": [
+                    {
+                        "name": "Materials & Metallurgy",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Basic Electricity",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Tanvir Hossain",
+                    "roll": "874603",
+                    "technology": "Mechanical Technology",
+                    "semester": "3rd"
+                },
+                "subjects": [
+                    {
+                        "name": "Machine Shop Practice-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Engineering Mechanics",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Mechanical Drafting",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Manufacturing Process-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Naim Islam",
+                    "roll": "874604",
+                    "technology": "Mechanical Technology",
+                    "semester": "4th"
+                },
+                "subjects": [
+                    {
+                        "name": "Thermodynamics",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Machine Shop Practice-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Strength of Materials",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Manufacturing Process-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Computer-Aided Design (CAD)-1",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Shakil Khan",
+                    "roll": "874605",
+                    "technology": "Mechanical Technology",
+                    "semester": "5th"
+                },
+                "subjects": [
+                    {
+                        "name": "Hydraulics & Hydraulic Machinery",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Advance Welding",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Machine Shop Practice-3",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Power Plant Engineering",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Theory of Machines",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Arif Mahmud",
+                    "roll": "874606",
+                    "technology": "Mechanical Technology",
+                    "semester": "6th"
+                },
+                "subjects": [
+                    {
+                        "name": "Design of Machine Elements",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Refrigeration & Air Conditioning",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Instrumentation & Control",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mechatronics & PLC",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Tool Design",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Faisal Rahman",
+                    "roll": "874607",
+                    "technology": "Mechanical Technology",
+                    "semester": "7th"
+                },
+                "subjects": [
+                    {
+                        "name": "Heat Treatment",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Production Planning & Control",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mechanical Project / CAD-2",
+                        "credit": 4,
+                        "midterm_marks": 30
+                    },
+                    {
+                        "name": "Maintenance Engineering",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject (Automobile/Others)",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "technology": "Food Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10,
+            "1_credit": 10
+        },
+        "semesters": [
+            {
+                "student": {
+                    "name": "Rakib Hasan",
+                    "roll": "964601",
+                    "technology": "Food Technology",
+                    "semester": "1st"
+                },
+                "subjects": [
+                    {
+                        "name": "Food Materials",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Basic Electricity",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Sabbir Ahmed",
+                    "roll": "964602",
+                    "technology": "Food Technology",
+                    "semester": "2nd"
+                },
+                "subjects": [
+                    {
+                        "name": "Food Microbiology-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Computer Application",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Tanvir Islam",
+                    "roll": "964603",
+                    "technology": "Food Technology",
+                    "semester": "3rd"
+                },
+                "subjects": [
+                    {
+                        "name": "Food Microbiology-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Food Chemistry",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "General Biochemistry",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Food Engineering Fundamentals",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Naim Islam",
+                    "roll": "964604",
+                    "technology": "Food Technology",
+                    "semester": "4th"
+                },
+                "subjects": [
+                    {
+                        "name": "Unit Operation of Food Engineering",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Cereal Product Technology",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Fruit & Vegetable Processing",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Animal Product Technology-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Principles of Food Preservation",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Shakil Khan",
+                    "roll": "964605",
+                    "technology": "Food Technology",
+                    "semester": "5th"
+                },
+                "subjects": [
+                    {
+                        "name": "Food Analysis & Quality Control",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Animal Product Technology-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Food Plant Utilities",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Beverage Technology",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Fats & Oil Technology",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Arif Mahmud",
+                    "roll": "964606",
+                    "technology": "Food Technology",
+                    "semester": "6th"
+                },
+                "subjects": [
+                    {
+                        "name": "Food Packaging & Storage",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Food Plant Hygiene & Sanitation",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Bakery & Confectionery Technology",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Special Food Technology",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Food Plant Management",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Faisal Rahman",
+                    "roll": "964607",
+                    "technology": "Food Technology",
+                    "semester": "7th"
+                },
+                "subjects": [
+                    {
+                        "name": "Food Project",
+                        "credit": 4,
+                        "midterm_marks": 30
+                    },
+                    {
+                        "name": "Human Nutrition & Dietetics",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Sensory Evaluation of Foods",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Food Laws & Regulations",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject (Sugar/Tea/Other)",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "technology": "Textile Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10,
+            "1_credit": 10
+        },
+        "semesters": [
+            {
+                "student": {
+                    "name": "Rakib Hasan",
+                    "roll": "984601",
+                    "technology": "Textile Technology",
+                    "semester": "1st"
+                },
+                "subjects": [
+                    {
+                        "name": "Textile Raw Materials-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Basic Electricity",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Sabbir Ahmed",
+                    "roll": "984602",
+                    "technology": "Textile Technology",
+                    "semester": "2nd"
+                },
+                "subjects": [
+                    {
+                        "name": "Textile Raw Materials-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "General Textile Process",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Tanvir Islam",
+                    "roll": "984603",
+                    "technology": "Textile Technology",
+                    "semester": "3rd"
+                },
+                "subjects": [
+                    {
+                        "name": "Yarn Manufacturing-1",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Fabric Manufacturing-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Textile Calculation-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Computer Application",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Naim Islam",
+                    "roll": "984604",
+                    "technology": "Textile Technology",
+                    "semester": "4th"
+                },
+                "subjects": [
+                    {
+                        "name": "Yarn Manufacturing-2",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Fabric Manufacturing-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Wet Processing-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Textile Calculation-2",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Textile Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Shakil Khan",
+                    "roll": "984605",
+                    "technology": "Textile Technology",
+                    "semester": "5th"
+                },
+                "subjects": [
+                    {
+                        "name": "Wet Processing-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Clothing Manufacturing-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Textile Testing & Quality Control-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Fabric Structure & Analysis",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Textile Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Arif Mahmud",
+                    "roll": "984606",
+                    "technology": "Textile Technology",
+                    "semester": "6th"
+                },
+                "subjects": [
+                    {
+                        "name": "Clothing Manufacturing-2",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Textile Testing & Quality Control-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Textile Finishing",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Advanced Yarn/Fabric Production",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Faisal Rahman",
+                    "roll": "984607",
+                    "technology": "Textile Technology",
+                    "semester": "7th"
+                },
+                "subjects": [
+                    {
+                        "name": "Textile Project",
+                        "credit": 4,
+                        "midterm_marks": 30
+                    },
+                    {
+                        "name": "Maintenance of Textile Machinery",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Textile Merchandising",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Advanced Wet Processing",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject",
+                        "credit": 3,
+                        "midterm_marks": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "technology": "Automobile Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10,
+            "1_credit": 10
+        },
+        "semesters": [
+            {
+                "student": {
+                    "name": "Rakib Khan",
+                    "roll": "664601",
+                    "technology": "Automobile Technology",
+                    "semester": "1st"
+                },
+                "subjects": [
+                    {
+                        "name": "Automobile Shop Practice",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Engineering Drawing",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Sabbir Islam",
+                    "roll": "664602",
+                    "technology": "Automobile Technology",
+                    "semester": "2nd"
+                },
+                "subjects": [
+                    {
+                        "name": "Automotive Engine Fundamentals",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Basic Electricity & Electronics",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Tanvir Ahmed",
+                    "roll": "664603",
+                    "technology": "Automobile Technology",
+                    "semester": "3rd"
+                },
+                "subjects": [
+                    {
+                        "name": "Petrol Engine Systems",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Automotive Suspension, Steering & Braking",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Machine Shop Practice",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Engineering Mechanics",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Naim Hasan",
+                    "roll": "664604",
+                    "technology": "Automobile Technology",
+                    "semester": "4th"
+                },
+                "subjects": [
+                    {
+                        "name": "Diesel Engine Systems",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Automotive Transmission-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Heat Engine Fundamentals",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Automotive Electricity",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Computer Application",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Shakil Mahmud",
+                    "roll": "664605",
+                    "technology": "Automobile Technology",
+                    "semester": "5th"
+                },
+                "subjects": [
+                    {
+                        "name": "Automotive Transmission-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Fuel Injection System",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Automotive Air Conditioning",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Engine Testing & Performance",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Arif Rahman",
+                    "roll": "664606",
+                    "technology": "Automobile Technology",
+                    "semester": "6th"
+                },
+                "subjects": [
+                    {
+                        "name": "Hybrid & Electric Vehicles",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Computerized Engine Control System",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Vehicle Body Engineering",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Advanced Automotive Electronics",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Optional Subject-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Faisal Karim",
+                    "roll": "664607",
+                    "technology": "Automobile Technology",
+                    "semester": "7th"
+                },
+                "subjects": [
+                    {
+                        "name": "Automobile Project",
+                        "credit": 4,
+                        "midterm_marks": 30
+                    },
+                    {
+                        "name": "Vehicle Maintenance & Fault Diagnosis",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Auto Shop Management",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject-3",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "technology": "Architecture Technology",
+        "bteb_regulation": "2022",
+        "midterm_marks_rule": {
+            "4_credit": 30,
+            "3_credit": 20,
+            "2_credit": 10,
+            "1_credit": 10
+        },
+        "semesters": [
+            {
+                "student": {
+                    "name": "Rafi Hasan",
+                    "roll": "774601",
+                    "technology": "Architecture Technology",
+                    "semester": "1st"
+                },
+                "subjects": [
+                    {
+                        "name": "Basic Design",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-1",
+                        "credit": 4,
+                        "midterm_marks": 27
+                    },
+                    {
+                        "name": "Physics-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Engineering Drawing",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "English-1",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Social Science / Bangla",
+                        "credit": 2,
+                        "midterm_marks": 8
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Siam Ahmed",
+                    "roll": "774602",
+                    "technology": "Architecture Technology",
+                    "semester": "2nd"
+                },
+                "subjects": [
+                    {
+                        "name": "Architectural Graphics-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Building Materials",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Mathematics-2",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Physics-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "English-2",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Chemistry",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Nabil Rahman",
+                    "roll": "774603",
+                    "technology": "Architecture Technology",
+                    "semester": "3rd"
+                },
+                "subjects": [
+                    {
+                        "name": "Architectural Graphics-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Building Construction-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "History of Architecture-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Computer-Aided Design (CAD)-1",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Mathematics-3",
+                        "credit": 4,
+                        "midterm_marks": 26
+                    },
+                    {
+                        "name": "Business Communication",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Arman Kabir",
+                    "roll": "774604",
+                    "technology": "Architecture Technology",
+                    "semester": "4th"
+                },
+                "subjects": [
+                    {
+                        "name": "Architectural Design-1",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Building Construction-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "CAD-2 (3D Modeling)",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "History of Architecture-2",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Surveying for Architecture",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Environmental Studies",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Fahim Chowdhury",
+                    "roll": "774605",
+                    "technology": "Architecture Technology",
+                    "semester": "5th"
+                },
+                "subjects": [
+                    {
+                        "name": "Architectural Design-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Interior Design",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Working Drawing-1",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Structure & Construction Costing",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Building Services",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Accounting Theory & Practice",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Tanvir Mahmud",
+                    "roll": "774606",
+                    "technology": "Architecture Technology",
+                    "semester": "6th"
+                },
+                "subjects": [
+                    {
+                        "name": "Architectural Design-3",
+                        "credit": 4,
+                        "midterm_marks": 29
+                    },
+                    {
+                        "name": "Working Drawing-2",
+                        "credit": 4,
+                        "midterm_marks": 28
+                    },
+                    {
+                        "name": "Landscape Design",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Urban Planning Fundamentals",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Industrial Management",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Optional Subject",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    }
+                ]
+            },
+            {
+                "student": {
+                    "name": "Imran Hossain",
+                    "roll": "774607",
+                    "technology": "Architecture Technology",
+                    "semester": "7th"
+                },
+                "subjects": [
+                    {
+                        "name": "Architectural Project (Thesis)",
+                        "credit": 4,
+                        "midterm_marks": 30
+                    },
+                    {
+                        "name": "Professional Practice & Ethics",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Interior & Landscape Detail",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    },
+                    {
+                        "name": "Maintenance of Buildings",
+                        "credit": 3,
+                        "midterm_marks": 17
+                    },
+                    {
+                        "name": "Entrepreneurship",
+                        "credit": 2,
+                        "midterm_marks": 9
+                    },
+                    {
+                        "name": "Advanced CAD/BIM",
+                        "credit": 3,
+                        "midterm_marks": 18
+                    }
+                ]
+            }
+        ]
+    }
+]

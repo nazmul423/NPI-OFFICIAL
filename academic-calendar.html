@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Calendar 2024-25 | NPI Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --npi-red: #ed1c24;
+            --npi-blue: #1d4289;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #fcfcfc;
+        }
+
+        .dots-bg {
+            background-image: radial-gradient(#d1d5db 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+        }
+
+        /* Premium Gradient Header */
+        .header-gradient {
+            background: linear-gradient(135deg, #1d4289 0%, #2e3192 100%);
+        }
+
+        /* Status Badge Animation */
+        .pulse-red {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(237, 28, 36, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(237, 28, 36, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(237, 28, 36, 0);
+            }
+        }
+
+        /* Dropdown Logic */
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 1000;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -4px;
+            z-index: 1100;
+        }
+
+        .group-hover-submenu:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Section (Navbar) -->
+     <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
+            <!-- Logo -->
+            <a href="./index.html">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo" class="h-16">
+            </a>
+
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-700 uppercase text-sm items-center">
+                <a href="./index.html" class="text-red-main">Home</a>
+
+                <!-- About Us Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="./at-a-glance.html" class="hover:text-red-main transition flex items-center">
+                        About Us <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown Menu Box -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-64 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50 overflow-hidden">
+                        <li>
+                            <a href="./at-a-glance.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bolt mr-2 text-[10px]"></i> At A Glance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./history.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-history mr-2 text-[10px]"></i> History of NPI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./mission-vision.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bullseye mr-2 text-[10px]"></i> Mission and Vision
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./administration.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-user-tie mr-2 text-[10px]"></i> Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./photo-gallery.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                <i class="fas fa-image mr-2 text-[10px]"></i> Photo Gallery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admission Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Admission <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Main Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+
+                        <!-- Nested Dropdown: Departments (Hover to see technology list) -->
+                        <li class="relative group-hover-submenu">
+                            <a href="#"
+                                class="flex justify-between items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                Departments <i class="fas fa-chevron-right text-[10px]"></i>
+                            </a>
+
+                            <!-- Sub-menu (List of Technologies for Details Page) -->
+                            <ul class="submenu bg-white shadow-2xl rounded-md w-72 border-t-4 border-red-600">
+                                <li><a href="./Details Admisson Page/computer-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Computer
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/civil-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Civil
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/electrical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Electrical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/architecture-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Architecture
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/mechanical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Mechanical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/food-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Food
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/textile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Textile
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/automobile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile Engineering</a></li>
+                               
+                    
+                            </ul>
+                        </li>
+
+                        <!-- Other Admission Items -->
+                        <li><a href="./admissonform.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Online
+                                Admission</a></li>
+
+                        <li><a href="./circular.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Admission
+                                Circular</a></li>
+                        <li><a href="./campus-life.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Campus
+                                Life</a></li>
+
+                        <li><a href="./tuition-fees.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Tuition
+                                Fees</a></li>
+
+
+                    </ul>
+                </div>
+                <!-- Academic Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Academic <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Academic Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100"><a href="./notice-board.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Notice
+                                Board</a></li>
+                        <li class="border-b border-gray-100"><a href="./syllabus.html."
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Course
+                                & Syllabus</a></li>
+                        <li class="border-b border-gray-100"><a href="./class-routine.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Student
+                                Routine</a></li>
+                        <li class="border-b border-gray-100"><a href="./academic-calendar.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Academic
+                                Calendar</a></li>
+                        <!-- BTEB Result (Direct Link) -->
+                        <li class="border-b border-gray-100"><a href="./internal-result.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                BTEB Result </a></li>
+                    </ul>
+                </div>
+                              <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="news-blogs.html"
+                        class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Blogs <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-56 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100">
+                            <a href="news-blogs.html?filter=news"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Latest
+                                News</a>
+                        </li>
+                        <li>
+                            <a href="news-blogs.html?filter=blog"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Our
+                                Blogs</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="hover:text-red-main">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-3 text-blue-800">
+                    <i class="fab fa-facebook cursor-pointer"></i>
+                    <i class="fab fa-youtube cursor-pointer"></i>
+                    <i class="fab fa-linkedin cursor-pointer hover:text-red-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- [এখানে আপনার ইনডেক্স পেজের Navbar কোডটি বসিয়ে দেবেন] -->
+
+    <!-- Premium Banner Section -->
+    <section class="header-gradient py-24 text-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 dots-bg opacity-10"></div>
+        <div class="relative z-10 px-4">
+            <span
+                class="bg-red-600 px-6 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.4em] shadow-lg">Official
+                Schedule</span>
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mt-6">Academic Calendar</h1>
+            <h2 class="text-xl md:text-2xl font-bold text-blue-200 mt-2 italic">Session: 2024 - 2025 (Diploma in
+                Engineering)</h2>
+            <div class="w-24 h-1.5 bg-red-600 mx-auto mt-8 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 py-4 text-[11px] text-gray-400 font-bold uppercase tracking-widest border-b">
+        <a href="index.html" class="text-blue-500">Home</a> <span class="mx-2">»</span> Academic <span
+            class="mx-2">»</span> Calendar
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-16 flex-grow w-full">
+
+        <!-- BTEB Direct Download Section -->
+        <div
+            class="bg-white rounded-[40px] shadow-2xl border border-gray-100 overflow-hidden mb-20 flex flex-col md:flex-row">
+            <div class="md:w-2/3 p-10 lg:p-16">
+                <h3 class="text-3xl font-black text-gray-800 uppercase mb-6 flex items-center">
+                    <i class="fas fa-file-invoice text-red-600 mr-4"></i> Official BTEB Calendar
+                </h3>
+                <p class="text-gray-500 text-lg leading-relaxed mb-10 text-justify">
+                    বাংলাদেশ কারিগরি শিক্ষা বোর্ড (BTEB) কর্তৃক নির্ধারিত ২০২৪-২০২৫ শিক্ষাবর্ষের সকল পলিটেকনিক
+                    ইন্সটিটিউটের জন্য প্রযোজ্য অফিশিয়াল একাডেমিক ক্যালেন্ডারটি সরাসরি বোর্ডের সার্ভার থেকে ডাউনলোড করতে
+                    নিচের বাটনে ক্লিক করুন। এতে পরীক্ষার তারিখ, ফরম ফিলাপ এবং ছুটির পূর্ণাঙ্গ তালিকা রয়েছে।
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <!-- This is a Direct Link to BTEB PDF Section -->
+                    <a href="http://bteb.gov.bd/site/page/82b13e9a-5b12-4c2f-b44c-9749100192e2" target="_blank"
+                        class="flex items-center gap-4 bg-red-600 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-gray-900 transition-all duration-500 shadow-xl hover:shadow-red-200">
+                        <i class="fas fa-cloud-download-alt text-2xl"></i> Direct Download PDF
+                    </a>
+                    <a href="http://bteb.gov.bd/" target="_blank"
+                        class="flex items-center gap-3 bg-gray-100 text-gray-600 px-8 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-gray-200 transition">
+                        <i class="fas fa-external-link-alt"></i> Visit BTEB Website
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/3 bg-gray-50 p-10 flex flex-col justify-center items-center text-center border-l">
+                <div class="w-24 h-24 bg-white rounded-3xl shadow-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-university text-4xl text-npi-blue"></i>
+                </div>
+                <h4 class="font-black text-gray-700 uppercase mb-2">BTEB Approved</h4>
+                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Board Reference: 2024/Admin/Cal</p>
+            </div>
+        </div>
+
+        <!-- Major Academic Events Grid -->
+        <div class="grid lg:grid-cols-3 gap-10">
+
+            <!-- Column 1: Important Dates -->
+            <div class="lg:col-span-2 space-y-8">
+                <h3
+                    class="text-2xl font-black text-[#1d4289] uppercase tracking-tight border-b-4 border-red-600 pb-2 inline-block">
+                    Key Academic Dates (2024)</h3>
+
+                <div class="grid gap-4">
+                    <!-- Event 1 -->
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center gap-6 hover:shadow-md transition">
+                        <div
+                            class="flex-none w-16 h-16 bg-blue-50 text-npi-blue rounded-2xl flex flex-col items-center justify-center font-black">
+                            <span class="text-xl">15</span>
+                            <span class="text-[9px] uppercase">JUN</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-black text-gray-800 uppercase text-sm">Class Commencement</h4>
+                            <p class="text-xs text-gray-400">Regular classes start for 1st, 3rd, 5th & 7th semesters.
+                            </p>
+                        </div>
+                        <span
+                            class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-[9px] font-black uppercase">Live
+                            Now</span>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center gap-6 hover:shadow-md transition">
+                        <div
+                            class="flex-none w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex flex-col items-center justify-center font-black">
+                            <span class="text-xl">05</span>
+                            <span class="text-[9px] uppercase">AUG</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-black text-gray-800 uppercase text-sm">1st Midterm Examination</h4>
+                            <p class="text-xs text-gray-400">Mandatory for all technologies. Assessment based on 40%
+                                syllabus.</p>
+                        </div>
+                        <span
+                            class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-[9px] font-black uppercase pulse-red">Upcoming</span>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center gap-6 hover:shadow-md transition">
+                        <div
+                            class="flex-none w-16 h-16 bg-gray-50 text-gray-400 rounded-2xl flex flex-col items-center justify-center font-black">
+                            <span class="text-xl">20</span>
+                            <span class="text-[9px] uppercase">OCT</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-black text-gray-800 uppercase text-sm">Semester Final Exam (Tentative)</h4>
+                            <p class="text-xs text-gray-400">Board final exams under BTEB supervision.</p>
+                        </div>
+                        <span
+                            class="bg-gray-100 text-gray-400 px-4 py-1 rounded-full text-[9px] font-black uppercase">Tentative</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: Sidebar Info -->
+            <div class="space-y-8">
+                <!-- Semester Breakdown -->
+                <div class="bg-gray-900 text-white p-8 rounded-[40px] shadow-2xl relative overflow-hidden">
+                    <h4 class="text-xl font-black uppercase mb-6 border-b border-white/20 pb-2">Course Cycle</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                            <div>
+                                <p class="text-xs font-black uppercase text-red-500">Odd Semesters</p>
+                                <p class="text-sm font-medium">1st, 3rd, 5th, 7th (June - Nov)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div>
+                                <p class="text-xs font-black uppercase text-blue-400">Even Semesters</p>
+                                <p class="text-sm font-medium">2nd, 4th, 6th, 8th (Dec - May)</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <i class="fas fa-history absolute -right-10 -bottom-10 text-9xl opacity-5"></i>
+                </div>
+
+                <!-- Holiday Alert Box -->
+                <div class="bg-yellow-50 p-8 rounded-[40px] border border-yellow-100 shadow-sm">
+                    <h4 class="text-lg font-black text-yellow-800 uppercase mb-4 flex items-center">
+                        <i class="fas fa-umbrella-beach mr-3"></i> Next Holiday
+                    </h4>
+                    <p class="text-sm text-yellow-700 font-bold italic">Eid-ul-Adha Vacation</p>
+                    <p class="text-xs text-yellow-600 mt-1 uppercase font-black">16 June - 22 June, 2024</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section - Full Width Background -->
+<footer class="w-full bg-[#0f172a] text-white pt-20 pb-10 border-t-8 border-red-600 relative overflow-hidden">
+    
+    <!-- Decorative Pattern Overlay (পুরো ব্যাকগ্রাউন্ড জুড়ে থাকবে) -->
+    <div class="absolute inset-0 dots-bg opacity-5 pointer-events-none"></div>
+
+    <!-- Inner Container - কন্টেন্ট মাঝখানে রাখার জন্য mx-auto এবং max-w-7xl -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+            <!-- Column 1: About Institute -->
+            <div class="space-y-6">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo"
+                    class="h-16 bg-white p-1 rounded-sm shadow-lg">
+                <p class="text-gray-400 text-sm leading-relaxed text-justify italic">
+                    National Polytechnic Institute (NPI) is a premier technical institution committed to
+                    producing world-class engineers. With modern labs and expert faculty, we bridge the gap
+                    between education and industry.
+                </p>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="lg:pl-10">
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Information</h4>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a href="admissonform.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Online Admission</a></li>
+                    <li><a href="internal-result.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Board Results</a></li>
+                    <li><a href="notice-board.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Academic Notice</a></li>
+                    <li><a href="class-routine.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Class Routine</a></li>
+                    <li><a href="syllabus.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Syllabus Download</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Engineering Dept. -->
+            <div>
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Departments</h4>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a href="details/computer.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Computer Science & Tech</a></li>
+                    <li><a href="details/electrical.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Electrical Technology</a></li>
+                    <li><a href="details/civil.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Civil Technology</a></li>
+                    <li><a href="details/mechanical.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Mechanical Technology</a></li>
+                    <li><a href="details/textile.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Textile Engineering</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact Us -->
+            <div class="space-y-6">
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Contact Us</h4>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 bg-red-600/10 text-red-600 rounded-xl flex items-center justify-center flex-none group-hover:bg-red-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-map-marker-alt"></i></div>
+                        <p class="text-sm text-gray-400 italic">173/3, Narangai Bustand, Manikgonj Sadar, Manikganj.</p>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-blue-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-phone-alt"></i></div>
+                        <p class="text-sm text-gray-400 font-bold tracking-widest">01711-349947, 01911-316010</p>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 bg-purple-600/10 text-purple-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-purple-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-envelope"></i></div>
+                        <p class="text-sm text-gray-400 font-bold">info@npi.edu.bd</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em]">
+                © 2024 <span class="text-white uppercase font-black tracking-widest">National Polytechnic Institute</span>. All Rights Reserved.
+            </p>
+            <div class="flex space-x-6 text-[10px] font-black uppercase text-gray-500 tracking-widest items-center">
+                <a href="#" class="hover:text-red-500 transition">Privacy Policy</a>
+                <span class="text-white opacity-20">|</span>
+                <a href="#" class="text-white hover:text-red-600 transition underline underline-offset-4 decoration-red-600">Developed by NPI IT Team</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Details | National Polytechnic Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --npi-red: #ed1c24;
+            --npi-blue: #1d4289;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .dots-bg {
+            background-image: radial-gradient(#d1d5db 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 1000;
+        }
+
+        .content-body p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #4b5563;
+            text-align: justify;
+        }
+         /* ড্রপডাউন লজিক - মেইন */
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 1000;
+            /* মেনু যাতে সবকিছুর ওপরে থাকে */
+        }
+
+        /* সাব-মেনু লজিক (Departments) */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            z-index: 1100;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .group-hover-submenu:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Section (আপনার ইনডেক্স পেজের Navbar এখানে বসাবেন) -->
+      <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
+            <!-- Logo -->
+            <a href="./index.html">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo" class="h-16">
+            </a>
+
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-700 uppercase text-sm items-center">
+                <a href="./index.html" class="text-red-main">Home</a>
+
+                <!-- About Us Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="./at-a-glance.html" class="hover:text-red-main transition flex items-center">
+                        About Us <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown Menu Box -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-64 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50 overflow-hidden">
+                        <li>
+                            <a href="./at-a-glance.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bolt mr-2 text-[10px]"></i> At A Glance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./history.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-history mr-2 text-[10px]"></i> History of NPI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./mission-vision.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bullseye mr-2 text-[10px]"></i> Mission and Vision
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./administration.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-user-tie mr-2 text-[10px]"></i> Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./photo-gallery.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                <i class="fas fa-image mr-2 text-[10px]"></i> Photo Gallery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admission Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Admission <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Main Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+
+                        <!-- Nested Dropdown: Departments (Hover to see technology list) -->
+                        <li class="relative group-hover-submenu">
+                            <a href="#"
+                                class="flex justify-between items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                Departments <i class="fas fa-chevron-right text-[10px]"></i>
+                            </a>
+
+                            <!-- Sub-menu (List of Technologies for Details Page) -->
+                            <ul class="submenu bg-white shadow-2xl rounded-md w-72 border-t-4 border-red-600">
+                                <li><a href="./Details Admisson Page/computer-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Computer
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/civil-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Civil
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/electrical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Electrical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/architecture-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Architecture
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/mechanical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Mechanical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/food-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Food
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/textile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Textile
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/automobile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile Engineering</a></li>
+                               
+                    
+                            </ul>
+                        </li>
+
+                        <!-- Other Admission Items -->
+                        <li><a href="./admissonform.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Online
+                                Admission</a></li>
+
+                        <li><a href="./circular.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Admission
+                                Circular</a></li>
+                        <li><a href="./campus-life.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Campus
+                                Life</a></li>
+
+                        <li><a href="./tuition-fees.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Tuition
+                                Fees</a></li>
+
+
+                    </ul>
+                </div>
+                <!-- Academic Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Academic <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Academic Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100"><a href="./notice-board.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Notice
+                                Board</a></li>
+                        <li class="border-b border-gray-100"><a href="./syllabus.html."
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Course
+                                & Syllabus</a></li>
+                        <li class="border-b border-gray-100"><a href="./class-routine.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Student
+                                Routine</a></li>
+                        <li class="border-b border-gray-100"><a href="./academic-calendar.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Academic
+                                Calendar</a></li>
+
+                        <li class="border-b border-gray-100"><a href="./internal-result.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                BTEB Result </a></li>
+
+                    </ul>
+                </div>
+                <!-- Blogs Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="news-blogs.html"
+                        class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Blogs <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-56 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100">
+                            <a href="news-blogs.html?filter=news"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Latest
+                                News</a>
+                        </li>
+                        <li>
+                            <a href="news-blogs.html?filter=blog"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Our
+                                Blogs</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="hover:text-red-main">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-3 text-blue-800">
+                    <i class="fab fa-facebook cursor-pointer"></i>
+                    <i class="fab fa-youtube cursor-pointer"></i>
+                    <i class="fab fa-linkedin cursor-pointer hover:text-red-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- News Title Header -->
+        <section class="bg-white border-b py-16 dots-bg">
+            <div class="max-w-7xl mx-auto px-4">
+                <span id="newsCategory"
+                    class="bg-red-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Campus
+                    News</span>
+                <h1 id="newsTitle" class="text-3xl md:text-5xl font-black text-gray-800 mt-6 leading-tight max-w-5xl">
+                    Loading...</h1>
+                <div
+                    class="flex flex-wrap items-center gap-6 mt-8 text-gray-400 text-xs font-bold uppercase tracking-widest">
+                    <span><i class="far fa-calendar-alt mr-2 text-red-600"></i> <span id="newsDate">---</span></span>
+                    <span><i class="far fa-user mr-2 text-red-600"></i> BY ADMIN</span>
+                    <span><i class="far fa-eye mr-2 text-red-600"></i> 1.2K VIEWS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid lg:grid-cols-12 gap-12">
+
+                <!-- Left: Full News Content -->
+                <div class="lg:col-span-8 bg-white p-6 md:p-10 rounded-[40px] shadow-sm border border-gray-100">
+                    <img id="newsImage" src=""
+                        class="w-full h-auto rounded-[30px] shadow-xl mb-10 border-4 border-white" alt="News Image">
+
+                    <div id="newsFullBody" class="content-body text-lg">
+                        <!-- Content will be injected by JS -->
+                        <p>Loading news content, please wait...</p>
+                    </div>
+
+                    <!-- Social Share -->
+                    <div class="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="flex items-center gap-4">
+                            <span class="text-xs font-black text-gray-400 uppercase tracking-widest">Share on:</span>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center hover:bg-gray-800 transition shadow-lg"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-green-500 text-white rounded-xl flex items-center justify-center hover:bg-gray-800 transition shadow-lg"><i
+                                        class="fab fa-whatsapp"></i></a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-blue-400 text-white rounded-xl flex items-center justify-center hover:bg-gray-800 transition shadow-lg"><i
+                                        class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <a href="news-blogs.html"
+                            class="text-npi-blue font-bold hover:text-red-600 transition uppercase text-sm">
+                            <i class="fas fa-chevron-left mr-2"></i> Back to All News
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Sidebar (Related News) -->
+                <div class="lg:col-span-4 space-y-10">
+                    <div class="bg-[#1d4289] p-8 rounded-[40px] text-white shadow-xl">
+                        <h3 class="text-xl font-bold uppercase mb-6 border-b border-white/20 pb-2 tracking-tight">Recent
+                            Updates</h3>
+                        <div class="space-y-6" id="recentList">
+                            <!-- JS will inject small cards here -->
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[40px] shadow-lg border border-gray-100">
+                        <h3 class="text-lg font-bold text-gray-800 uppercase mb-4 tracking-tighter">Academic Notice</h3>
+                        <p class="text-sm text-gray-400 mb-6 italic">Looking for official board notices?</p>
+                        <a href="notice-board.html"
+                            class="block w-full bg-red-600 text-white text-center py-3 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-gray-900 transition shadow-md">Notice
+                            Board</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Area -->
+   <!-- Footer Section - Full Width Background -->
+<footer class="w-full bg-[#0f172a] text-white pt-20 pb-10 border-t-8 border-red-600 relative overflow-hidden">
+    
+    <!-- Decorative Pattern Overlay (পুরো ব্যাকগ্রাউন্ড জুড়ে থাকবে) -->
+    <div class="absolute inset-0 dots-bg opacity-5 pointer-events-none"></div>
+
+    <!-- Inner Container - কন্টেন্ট মাঝখানে রাখার জন্য mx-auto এবং max-w-7xl -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+            <!-- Column 1: About Institute -->
+            <div class="space-y-6">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo"
+                    class="h-16 bg-white p-1 rounded-sm shadow-lg">
+                <p class="text-gray-400 text-sm leading-relaxed text-justify italic">
+                    National Polytechnic Institute (NPI) is a premier technical institution committed to
+                    producing world-class engineers. With modern labs and expert faculty, we bridge the gap
+                    between education and industry.
+                </p>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="lg:pl-10">
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Information</h4>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a href="admissonform.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Online Admission</a></li>
+                    <li><a href="internal-result.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Board Results</a></li>
+                    <li><a href="notice-board.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Academic Notice</a></li>
+                    <li><a href="class-routine.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Class Routine</a></li>
+                    <li><a href="syllabus.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Syllabus Download</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Engineering Dept. -->
+            <div>
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Departments</h4>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a href="details/computer.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Computer Science & Tech</a></li>
+                    <li><a href="details/electrical.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Electrical Technology</a></li>
+                    <li><a href="details/civil.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Civil Technology</a></li>
+                    <li><a href="details/mechanical.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Mechanical Technology</a></li>
+                    <li><a href="details/textile.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Textile Engineering</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact Us -->
+            <div class="space-y-6">
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Contact Us</h4>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 bg-red-600/10 text-red-600 rounded-xl flex items-center justify-center flex-none group-hover:bg-red-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-map-marker-alt"></i></div>
+                        <p class="text-sm text-gray-400 italic">173/3, Narangai Bustand, Manikgonj Sadar, Manikganj.</p>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-blue-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-phone-alt"></i></div>
+                        <p class="text-sm text-gray-400 font-bold tracking-widest">01711-349947, 01911-316010</p>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 bg-purple-600/10 text-purple-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-purple-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-envelope"></i></div>
+                        <p class="text-sm text-gray-400 font-bold">info@npi.edu.bd</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em]">
+                © 2024 <span class="text-white uppercase font-black tracking-widest">National Polytechnic Institute</span>. All Rights Reserved.
+            </p>
+            <div class="flex space-x-6 text-[10px] font-black uppercase text-gray-500 tracking-widest items-center">
+                <a href="#" class="hover:text-red-500 transition">Privacy Policy</a>
+                <span class="text-white opacity-20">|</span>
+                <a href="#" class="text-white hover:text-red-600 transition underline underline-offset-4 decoration-red-600">Developed by NPI IT Team</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // --- নিউজ ডাটাবেস (Real Content) ---
+        const newsDatabase = {
+            "1": {
+                category: "Admission",
+                title: "২০২৪-২৫ শিক্ষাবর্ষে ৪ বছর মেয়াদী ডিপ্লোমা ইন ইঞ্জিনিয়ারিংয়ে ভর্তি চলছে",
+                date: "May 25, 2024",
+                image: "./images/79.ADOBE.jpg",
+                content: `
+            <p>ন্যাশনাল পলিটেকনিক ইন্সটিটিউট (NPI) মানিকগঞ্জ ক্যাম্পোসে ২০২৪-২৫ শিক্ষাবর্ষে সরাসরি ভর্তি কার্যক্রম শুরু হয়েছে। বাংলাদেশ কারিগরি শিক্ষা বোর্ড (BTEB) অনুমোদিত সকল টেকনোলজিতে সীমিত আসনে শিক্ষার্থী ভর্তি করা হচ্ছে।</p>
+            <p>আগ্রহী শিক্ষার্থীদের এসএসসিতে নূন্যতম জিপিএ ২.০০ থাকলেই আবেদনের সুযোগ রয়েছে। ভর্তির জন্য মূল মার্কশীট এবং ৪ কপি পাসপোর্ট সাইজ ছবি নিয়ে সরাসরি ক্যাম্পাসে যোগাযোগ করার জন্য বলা হয়েছে। মহিলা শিক্ষার্থীদের জন্য রয়েছে বিশেষ ৪- শতাংশ পর্যন্ত স্কলারশিপের সুবিধা।</p>
+        `
+            },
+            "2": {
+                category: "Placement",
+                title: "এনপিআই জব ফেয়ার ২০২৪: শীর্ষস্থানীয় ৫০টি শিল্প প্রতিষ্ঠানের অংশগ্রহণ",
+                date: "May 10, 2024",
+                image: "./images/cst.jpg",
+                content: `
+            <p>শিক্ষার্থীদের পড়াশোনার পাশাপাশি কর্মসংস্থানের সুযোগ করে দিতে এনপিআই মানিকগঞ্জ ক্যাম্পাসে অনুষ্ঠিত হয়ে গেল ‘চাকরি মেলা ২০২৪’। মেলার উদ্বোধন করেন এনপিআই ইঞ্জিনিয়ার্স লিমিটেডের সম্মানিত চেয়ারম্যান মহোদয়।</p>
+            <p>মেলায় দেশের বিভিন্ন প্রান্ত থেকে আসা ৫০টিরও বেশি মাল্টি-ন্যাশনাল এবং দেশীয় গ্রুপ অব কোম্পানি অংশগ্রহণ করে। দিনব্যাপী এই আয়োজনে কম্পিউটার, সিভিল এবং ইলেকট্রিক্যাল বিভাগের প্রায় ৪০০ শিক্ষার্থীকে প্রাথমিক ইন্টারভিউয়ের মাধ্যমে নিয়োগের জন্য নির্বাচিত করা হয়েছে।</p>
+        `
+            },
+            "3": {
+                category: "Academic",
+                title: "প্রবিধান ২০২২-এর সেমিস্টার ফাইনাল পরীক্ষার রুটিন প্রকাশ",
+                date: "April 20, 2024",
+                image: "./images/mechanical.jpg",
+                content: `
+            <p>বাংলাদেশ কারিগরি শিক্ষা বোর্ড কর্তৃক ডিপ্লোমা ইন ইঞ্জিনিয়ারিং শিক্ষাক্রমের প্রবিধান ২০২২-এর ১ম, ৩য় এবং ৫ম সেমিস্টার ফাইনাল পরীক্ষার রুটিন প্রকাশিত হয়েছে। আগামী জুন মাস থেকে সারাদেশের ন্যায় এনপিআই মানিকগঞ্জ কেন্দ্রেও পরীক্ষা অনুষ্ঠিত হবে।</p>
+            <p>পরীক্ষার্থীদের নিয়মিত ক্লাসে উপস্থিত থেকে সিলেবাস সম্পন্ন করার এবং পরীক্ষার প্রবেশপত্র (Admit Card) নির্ধারিত সময়ে সংগ্রহের জন্য নোটিশ প্রদান করা হয়েছে। ডিজিটাল নোটিশ বোর্ড থেকে ছাত্রছাত্রীরা পিডিএফ রুটিন ডাউনলোড করতে পারবে।</p>
+        `
+            },
+            "4": {
+                category: "Workshop",
+                title: "রোবোটিক্স এবং ইন্ডাস্ট্রিয়াল অটোমেশন নিয়ে বিশেষ কর্মশালা অনুষ্ঠিত",
+                date: "March 15, 2024",
+                image: "./images/Electrical.jpg",
+                content: `
+            <p>এনপিআই কম্পিউটার এবং ইলেকট্রিক্যাল টেকনোলজির শিক্ষার্থীদের জন্য ‘রোবোটিক্স ও আইওটি (IoT)’ বিষয়ক ৩ দিনব্যাপী এক কর্মশালা সফলভাবে শেষ হয়েছে। এতে আধুনিক সেন্সর প্রযুক্তি এবং আরডুইনো প্রোগ্রামিং নিয়ে বিস্তারিত হাতে-কলমে প্রশিক্ষণ দেওয়া হয়।</p>
+            <p>কর্মশালা শেষে সফল অংশগ্রহণকারীদের সনদ প্রদান করা হয়। বিভাগীয় প্রধানগণ জানান, চতুর্থ শিল্প বিপ্লবের চ্যালেঞ্জ মোকাবিলায় এ ধরনের টেকনিক্যাল ওয়ার্কশপ শিক্ষার্থীদের দক্ষতা বহুগুণ বাড়িয়ে দেয়।</p>
+        `
+            },
+            "5": {
+                category: "Social Work",
+                title: "এনপিআই ব্লাড ডোনার ক্লাবের উদ্যোগে বিনামূল্যে রক্তদান কর্মসূচি",
+                date: "February 28, 2024",
+                image: "./images/OIP.webp",
+                content: `
+            <p>ন্যাশনাল পলিটেকনিক ইন্সটিটিউটের সমাজসেবামূলক সংগঠন ‘এনপিআই ব্লাড ডোনার ক্লাব’ এবং রেড ক্রিসেন্ট সোসাইটির যৌথ উদ্যোগে ক্যাম্পাসে রক্তদান কর্মসূচি অনুষ্ঠিত হয়েছে।</p>
+            <p>উক্ত অনুষ্ঠানে শিক্ষার্থী এবং শিক্ষকগণ স্বতঃস্ফূর্তভাবে রক্তদান করেন। দিনশেষে প্রায় ১০০ ব্যাগ রক্ত সংগ্রহ করা হয় যা মুমূর্ষু রোগীদের কল্যাণে ব্যবহৃত হবে। রক্তদাতাদেরকে বিশেষ সম্মাননা কার্ড প্রদান করা হয়েছে।</p>
+        `
+            },
+            "6": {
+                category: "Excursion",
+                title: "সিভিল টেকনোলজির শিক্ষার্থীদের ইন্ডাস্ট্রিয়াল ভিজিট ও বাস্তব অভিজ্ঞতা",
+                date: "January 12, 2024",
+                image: "./images/civil.jpg",
+                content: `
+            <p>সিভিল ইঞ্জিনিয়ারিং ৪র্থ এবং ৬ষ্ঠ সেমিস্টারের শিক্ষার্থীদের জন্য সাভারের একটি আধুনিক কনস্ট্রাকশন সাইট এবং ব্রিক ফিল্ডে ইন্ডাস্ট্রিয়াল ভিজিট সম্পন্ন হয়েছে।</p>
+            <p>বাস্তব কর্মক্ষেত্রে কনক্রিট মিক্সিং, পাইল ড্রাইভিং এবং স্ট্রাকচারাল ডিজাইন কীভাবে কাজ করে তা শিক্ষার্থীরা সরজমিনে দেখে শেখার সুযোগ পেয়েছে। এটি তাদের তাত্ত্বিক জ্ঞানের সাথে ব্যবহারিক জ্ঞানের সমন্বয় ঘটাবে।</p>
+        `
+            },
+            "7": {
+                category: "Festival",
+                title: "জমকালো সাংস্কৃতিক অনুষ্ঠান ও পিঠা উৎসব পালিত",
+                date: "February 14, 2024",
+                image: "./images/food.jpg",
+                content: `
+            <p>বসন্ত বরণ এবং আন্তর্জাতিক মাতৃভাষা দিবস উপলক্ষে এনপিআই মানিকগঞ্জ ক্যাম্পাসে পিঠা উৎসব এবং সাংস্কৃতিক অনুষ্ঠান আয়োজিত হয়েছে।</p>
+            <p>শিক্ষার্থীরা বিভিন্ন স্টলে দেশীয় পিঠা প্রদর্শনী করেন। বিকেলে অনুষ্ঠিত সাংস্কৃতিক পর্বে সংগীত, নৃত্য এবং নাটক পরিবেশিত হয়। উৎসবমুখর পরিবেশে দিনটি উদযাপন করা হয়।</p>
+        `
+            },
+            "8": {
+                category: "Sports",
+                title: "এনপিআই প্রিমিয়ার লিগ (NPL) ক্রিকেট টুর্নামেন্ট ২০২৪ শুরু",
+                date: "March 05, 2024",
+                image: "./images/history.jpg",
+                content: `
+            <p>বার্ষিক ক্রীড়া প্রতিযোগিতার অংশ হিসেবে ক্যাম্পাসে শুরু হয়েছে ‘এনপিআই প্রিমিয়ার লিগ (NPL) ক্রিকেট’। টুর্নামেন্টে মোট ৮টি টেকনোলজি দল অংশগ্রহণ করছে।</p>
+            <p>উদ্বোধনী ম্যাচে কম্পিউটার টেকনোলজি বনাম ইলেকট্রিক্যাল টেকনোলজির খেলা অনুষ্ঠিত হয়। বিজয়ী দলের হাতে টুর্নামেন্ট শেষে ট্রফি এবং আকর্ষণীয় পুরস্কার তুলে দেওয়া হবে।</p>
+        `
+            },
+            "9": {
+                category: "Result",
+                title: "মিড-টার্ম পরীক্ষার ফলাফল এবং মেধাবী শিক্ষার্থীদের সম্মাননা",
+                date: "April 02, 2024",
+                image: "./images/image.png",
+                content: `
+            <p>২০২৩-২৪ শিক্ষাবর্ষের ইন্টারনাল মিড-টার্ম পরীক্ষার ফলাফল প্রকাশ করেছে এনপিআই একাডেমিক সেল। ফলাফল এখন অনলাইন পোর্টালে দেখা যাচ্ছে।</p>
+            <p>সর্বোচ্চ জিপিএ প্রাপ্ত শিক্ষার্থীদেরকে বিশেষ ডিনার এবং শিক্ষা উপকরণ দিয়ে পুরস্কৃত করার ঘোষণা দিয়েছেন প্রিন্সিপাল মহোদয়। খারাপ ফলাফল করা শিক্ষার্থীদের জন্য বিশেষ এক্সট্রা ক্লাসের ব্যবস্থা করা হয়েছে।</p>
+        `
+            },
+            "10": {
+                category: "Alumni",
+                title: "এনপিআই অ্যালামনাই অ্যাসোসিয়েশন: সাবেক শিক্ষার্থীদের পুনর্মিলনী",
+                date: "January 01, 2024",
+                image: "./images/team-npi.jpg",
+                content: `
+            <p>প্রতিষ্ঠার এক যুগ পূর্তি উপলক্ষে ন্যাশনাল পলিটেকনিক ইন্সটিটিউট মানিকগঞ্জের সাবেক শিক্ষার্থীদের নিয়ে পুনর্মিলনী অনুষ্ঠান সম্পন্ন হয়েছে।</p>
+            <p>দেশ-বিদেশে কর্মক্ষেত্রে সফল সাবেক শিক্ষার্থীরা তাদের অভিজ্ঞতার কথা বর্তমান শিক্ষার্থীদের সাথে শেয়ার করেন। অনুষ্ঠানে ভবিষ্যতে শিক্ষার্থীদের চাকরির বাজার সুনিশ্চিত করতে একটি ‘জব নেটওয়ার্কিং সেল’ গঠনের সিদ্ধান্ত নেওয়া হয়।</p>
+        `
+            }
+        };
+
+        // ১. পেজ লোড হওয়ার পর ডাটা রেন্ডার করা
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || "1"; // Default to ID 1 if not found
+
+            if (newsDatabase[id]) {
+                const news = newsDatabase[id];
+                document.getElementById('newsCategory').innerText = news.category;
+                document.getElementById('newsTitle').innerText = news.title;
+                document.getElementById('newsDate').innerText = news.date;
+                document.getElementById('newsImage').src = news.image;
+                document.getElementById('newsFullBody').innerHTML = news.content;
+                document.title = news.title + " | NPI News";
+            }
+
+            // ২. সাইডবার লিস্ট তৈরি করা
+            const list = document.getElementById('recentList');
+            Object.keys(newsDatabase).forEach(key => {
+                if (key !== id) { // বর্তমান নিউজ বাদে বাকিগুলো দেখাবে
+                    list.innerHTML += `
+                        <a href="news-details.html?id=${key}" class="flex gap-4 group cursor-pointer">
+                            <div class="flex-none w-16 h-16 rounded-xl overflow-hidden shadow-lg border-2 border-white/20">
+                                <img src="${newsDatabase[key].image}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold leading-tight group-hover:text-red-400 transition">${newsDatabase[key].title}</h4>
+                                <p class="text-[9px] font-bold text-blue-300 mt-1 uppercase">${newsDatabase[key].date}</p>
+                            </div>
+                        </a>
+                    `;
+                }
+            });
+        };
+    </script>
+
+</body>
+
+</html>

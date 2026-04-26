@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Polytechnic Institute | Excellence in Technical Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --npi-red: #ed1c24;
+            --npi-blue: #2e3192;
+        }
+
+        .bg-red-main {
+            background-color: var(--npi-red);
+        }
+
+        .text-red-main {
+            color: var(--npi-red);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ড্রপডাউন হোভার লজিক */
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+        /* ১. মেইন ড্রপডাউন (Admission) হোভার করলে নিচের দিকে খুলবে */
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* ২. সাব-মেনু (Departments এর লিস্ট) ডিফল্টভাবে লুকিয়ে থাকবে এবং মেইন মেনুর ডানে থাকবে */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            /* একদম ডান পাশে পাঠাবে */
+            top: -4px;
+            margin-left: 2px;
+        }
+
+        /* ৩. Departments এ মাউস রাখলে সাব-মেনু (ডিপার্টমেন্টের লিস্ট) দেখাবে */
+        .group-hover-submenu:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
+            <!-- Logo -->
+            <a href="./index.html">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo" class="h-16">
+            </a>
+
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-700 uppercase text-sm items-center">
+                <a href="./index.html" class="text-red-main">Home</a>
+
+                <!-- About Us Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="./at-a-glance.html" class="hover:text-red-main transition flex items-center">
+                        About Us <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown Menu Box -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-64 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50 overflow-hidden">
+                        <li>
+                            <a href="./at-a-glance.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bolt mr-2 text-[10px]"></i> At A Glance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./history.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-history mr-2 text-[10px]"></i> History of NPI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./mission-vision.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bullseye mr-2 text-[10px]"></i> Mission and Vision
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./administration.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-user-tie mr-2 text-[10px]"></i> Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./photo-gallery.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                <i class="fas fa-image mr-2 text-[10px]"></i> Photo Gallery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admission Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Admission <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Main Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+
+                        <!-- Nested Dropdown: Departments (Hover to see technology list) -->
+                        <li class="relative group-hover-submenu">
+                            <a href="#"
+                                class="flex justify-between items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                Departments <i class="fas fa-chevron-right text-[10px]"></i>
+                            </a>
+
+                            <!-- Sub-menu (List of Technologies for Details Page) -->
+                            <ul class="submenu bg-white shadow-2xl rounded-md w-72 border-t-4 border-red-600">
+                                <li><a href="./Details Admisson Page/computer-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Computer
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/civil-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Civil
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/electrical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Electrical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/architecture-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Architecture
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/mechanical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Mechanical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/food-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Food
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/textile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Textile
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/automobile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile
+                                        Engineering</a></li>
+
+
+                            </ul>
+                        </li>
+
+                        <!-- Other Admission Items -->
+                        <li><a href="./admissonform.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Online
+                                Admission</a></li>
+
+                        <li><a href="./circular.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Admission
+                                Circular</a></li>
+                        <li><a href="./campus-life.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Campus
+                                Life</a></li>
+
+                        <li><a href="./tuition-fees.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Tuition
+                                Fees</a></li>
+
+
+                    </ul>
+                </div>
+                <!-- Academic Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Academic <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Academic Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100"><a href="./notice-board.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Notice
+                                Board</a></li>
+                        <li class="border-b border-gray-100"><a href="./syllabus.html."
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Course
+                                & Syllabus</a></li>
+                        <li class="border-b border-gray-100"><a href="./class-routine.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Student
+                                Routine</a></li>
+                        <li class="border-b border-gray-100"><a href="./academic-calendar.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Academic
+                                Calendar</a></li>
+
+                        <li class="border-b border-gray-100"><a href="./internal-result.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                BTEB Result </a></li>
+
+                    </ul>
+                </div>
+                <!-- Blogs Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="news-blogs.html"
+                        class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Blogs <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-56 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100">
+                            <a href="news-blogs.html?filter=news"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Latest
+                                News</a>
+                        </li>
+                        <li>
+                            <a href="news-blogs.html?filter=blog"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Our
+                                Blogs</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="hover:text-red-main">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-3 text-blue-800">
+                    <i class="fab fa-facebook cursor-pointer"></i>
+                    <i class="fab fa-youtube cursor-pointer"></i>
+                    <i class="fab fa-linkedin cursor-pointer hover:text-red-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Hero Section -->
+    <section class="relative h-[500px] flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/79.ADOBE.jpg');">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-2">National Polytechnic Institute</h1>
+            <p class="text-xl md:text-2xl mb-6">Best Polytechnic Institute In Dhaka</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="admissonform.html" button
+                    class="bg-blue-200 px-6 py-2 rounded font-bold uppercase text-sm">Online Admission</button></a>
+                <button class="bg-blue-200 px-6 py-2 rounded font-bold uppercase text-sm">Graduation Ceremony</button>
+                <button class="bg-blue-200 px-6 py-2 rounded font-bold uppercase text-sm">Chakri Mela</button>
+            </div>
+        </div>
+    </section>
+    <a href="">
+
+        <!-- Professional Welcome Section -->
+        <section class="max-w-7xl mx-auto px-4 py-20 overflow-hidden">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+
+                <!-- Left Side: Image with Creative Frame -->
+                <div class="relative">
+                    <!-- Decorative Background Box (পিছনের লাল বক্স) -->
+                    <div class="absolute -bottom-6 -left-6 w-64 h-64 bg-red-50 rounded-2xl -z-10"></div>
+
+                    <div class="relative group">
+                        <!-- Image -->
+                        <img src="./images/image.png" alt="NPI Campus"
+                            class="rounded-2xl shadow-2xl w-full h-[450px] object-cover border-4 border-white transform transition duration-500 group-hover:scale-[1.02]">
+
+                        <!-- Floating Info Badge (প্রতিষ্ঠার বছর) -->
+                        <div
+                            class="absolute -top-5 -right-5 bg-red-600 text-white p-6 rounded-2xl shadow-xl hidden md:block">
+                            <span class="block text-3xl font-bold italic">2011</span>
+                            <span class="text-xs uppercase tracking-widest font-semibold opacity-90">Established</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Content Area -->
+                <div class="space-y-8">
+                    <div class="space-y-3">
+                        <span class="text-red-600 font-bold uppercase tracking-[0.2em] text-sm flex items-center">
+                            <span class="w-10 h-[2px] bg-red-600 mr-3"></span> About Our Institute
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                            Welcome To <span class="text-red-600">National Polytechnic</span> Institute
+                        </h2>
+                    </div>
+
+                    <div class="relative">
+                        <p
+                            class="text-gray-600 text-lg leading-relaxed text-justify border-l-4 border-red-600 pl-6 py-2 bg-gray-50 rounded-r-lg">
+                            <strong>NPI</strong> is recognized as the <strong>best polytechnic institute in
+                                Dhaka</strong>. We are dedicated to developing skilled engineers across various sectors,
+                            providing a prestigious environment for science, technology, and professional leadership
+                            development.
+                        </p>
+                    </div>
+
+                    <!-- Feature List (Professionalism বাড়াতে) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="font-medium">Industry-standard Labs</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="font-medium">Expert Faculty Members</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="font-medium">100% Job Assistance</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="font-medium">Modern Campus Life</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4">
+                        <a href="overview.html"
+                            class="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-bold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-red-200 group">
+                            Institute Overview
+                            <i
+                                class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Departments Grid -->
+            <!-- Our Departments Section (3 Cards per Row) -->
+            <section class="bg-gray-50 py-20 px-4">
+                <div class="max-w-7xl mx-auto">
+
+                    <!-- Section Header -->
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-red-600 uppercase tracking-widest">
+                            Our Departments
+                        </h2>
+                        <div class="w-24 h-1.5 bg-red-600 mx-auto mt-4 rounded-full"></div>
+                        <p class="text-gray-500 mt-4 text-lg">World-class technical education in various engineering
+                            sectors.</p>
+                    </div>
+
+                    <!-- Department Grid (3 Columns) -->
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                        <!-- Card 1: Computer Science & Technology -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-4 border-transparent hover:border-red-600">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./images/cst.jpg" alt="Computer"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    4 Years Diploma</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition">
+                                    Computer Science & Tech.</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Focusing on software development, web technologies, networking, and hardware
+                                    troubleshooting with high-end computing labs.
+                                </p>
+                                <div class="flex items-center justify-between border-t pt-4">
+                                    <span class="text-xs font-semibold text-gray-400 uppercase"><i
+                                            class="fas fa-laptop-code mr-1"></i> Software & AI Lab</span>
+                                    <a href="./Details Admisson Page/computer-details.html"
+                                        class="text-red-600 font-bold text-sm hover:underline">Details <i
+                                            class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Electrical Technology -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-4 border-transparent hover:border-red-600">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./images/Electrical.jpg" alt="Electrical"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    4 Years Diploma</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition">
+                                    Electrical Technology</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Advanced training on power generation, transmission, industrial wiring, and
+                                    electrical machines for future power engineers.
+                                </p>
+                                <div class="flex items-center justify-between border-t pt-4">
+                                    <span class="text-xs font-semibold text-gray-400 uppercase"><i
+                                            class="fas fa-bolt mr-1"></i> Power Machine Lab</span>
+                                    <a href="#" class="text-red-600 font-bold text-sm hover:underline">Details <i
+                                            class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Civil Technology -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-4 border-transparent hover:border-red-600">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./images/civil.jpg" alt="Civil"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    4 Years Diploma</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition">
+                                    Civil Technology</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Comprehensive study of structural design, surveying, construction management, and
+                                    urban infrastructure development.
+                                </p>
+                                <div class="flex items-center justify-between border-t pt-4">
+                                    <span class="text-xs font-semibold text-gray-400 uppercase"><i
+                                            class="fas fa-fountain-pen-nib mr-1"></i> Surveying Lab</span>
+                                    <a href="#" class="text-red-600 font-bold text-sm hover:underline">Details <i
+                                            class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Mechanical Technology -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-4 border-transparent hover:border-red-600">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./images/mechanical.jpg" alt="Mechanical"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    4 Years Diploma</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition">
+                                    Mechanical Technology</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Mastering the design, manufacturing, and operation of heavy machinery,
+                                    thermodynamics, and automobile engineering.
+                                </p>
+                                <div class="flex items-center justify-between border-t pt-4">
+                                    <span class="text-xs font-semibold text-gray-400 uppercase"><i
+                                            class="fas fa-tools mr-1"></i> Machine Shop Lab</span>
+                                    <a href="#" class="text-red-600 font-bold text-sm hover:underline">Details <i
+                                            class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Food Technology -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-4 border-transparent hover:border-red-600">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./images/food.jpg" alt="Food"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    4 Years Diploma</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition">
+                                    Food Technology</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Learning food processing, quality control, preservation techniques, and safety
+                                    standards to lead the food industry.
+                                </p>
+                                <div class="flex items-center justify-between border-t pt-4">
+                                    <span class="text-xs font-semibold text-gray-400 uppercase"><i
+                                            class="fas fa-flask mr-1"></i> Chemistry & Bio Lab</span>
+                                    <a href="#" class="text-red-600 font-bold text-sm hover:underline">Details <i
+                                            class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Textile Technology -->
+                        <div
+                            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group border-b-4 border-transparent hover:border-red-600">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./images/textile.jpg" alt="Textile"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    4 Years Diploma</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition">
+                                    Textile Technology</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Specialized education on yarn manufacturing, fabric production, dyeing, and garment
+                                    quality management.
+                                </p>
+                                <div class="flex items-center justify-between border-t pt-4">
+                                    <span class="text-xs font-semibold text-gray-400 uppercase"><i
+                                            class="fas fa-tshirt mr-1"></i> Spinning & Weaving Lab</span>
+                                    <a href="#" class="text-red-600 font-bold text-sm hover:underline">Details <i
+                                            class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="bg-red-50 py-16">
+                <div class="max-w-7xl mx-auto grid grid-cols-3 text-center">
+                    <div>
+                        <h2 class="text-5xl font-bold text-red-main">3000+</h2>
+                        <p class="text-xl text-gray-700">Students</p>
+                    </div>
+                    <div>
+                        <h2 class="text-5xl font-bold text-red-main">1600+</h2>
+                        <p class="text-xl text-gray-700">Alumni</p>
+                    </div>
+                    <div>
+                        <h2 class="text-5xl font-bold text-red-main">60+</h2>
+                        <p class="text-xl text-gray-700">Teachers</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Message Section -->
+            <!-- Message Section -->
+            <section class="bg-white py-20 px-4">
+                <div class="max-w-7xl mx-auto">
+
+                    <!-- Section Title -->
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-red-600 uppercase tracking-widest">
+                            Message
+                        </h2>
+                        <div class="w-20 h-1.5 bg-red-600 mx-auto mt-4 rounded-full"></div>
+                    </div>
+
+                    <!-- Message Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                        <!-- Card 1: Chairman Message -->
+                        <div
+                            class="border border-red-100 p-8 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all duration-500 group relative">
+                            <div class="absolute -top-12 left-1/2 -translate-x-1/2">
+                                <img src="./images/chairman_npi.jpg" alt="Chairman"
+                                    class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover group-hover:border-red-600 transition duration-500">
+                            </div>
+                            <div class="mt-12">
+                                <p class="text-gray-600 italic text-sm leading-relaxed mb-6">
+                                    "বাংলাদেশে পলিটেকনিক শিক্ষার মানোন্নয়নে আমরা নিরলসভাবে কাজ করে যাচ্ছি। আমাদের লক্ষ্য
+                                    দক্ষ ও নৈতিকতাসম্পন্ন প্রকৌশলী গড়ে তোলা।"
+                                </p>
+                                <h4 class="text-lg font-extrabold text-gray-800">Md. Shamsur Rahman</h4>
+                                <p class="text-red-600 font-bold text-xs uppercase tracking-widest mt-1">Chairman, NPI
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Principal Message -->
+                        <div
+                            class="border border-red-100 p-8 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all duration-500 group relative">
+                            <div class="absolute -top-12 left-1/2 -translate-x-1/2">
+                                <img src="./images/2.jpg" alt="Principal"
+                                    class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover group-hover:border-red-600 transition duration-500">
+                            </div>
+                            <div class="mt-12">
+                                <p class="text-gray-600 italic text-sm leading-relaxed mb-6">
+                                    "শিক্ষার্থীদের কারিগরি জ্ঞান ও হাতে-কলমে শিক্ষার মাধ্যমে আমরা আগামী দিনের চ্যালেঞ্জ
+                                    মোকাবেলায় প্রস্তুত করছি। আমাদের ক্যাম্পাস একটি আদর্শ বিদ্যাপীঠ।"
+                                </p>
+                                <h4 class="text-lg font-extrabold text-gray-800">Engr. Nirmal Chandra Sikder</h4>
+                                <p class="text-red-600 font-bold text-xs uppercase tracking-widest mt-1">Principal, NPI
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Director Message -->
+                        <div
+                            class="border border-red-100 p-8 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all duration-500 group relative">
+                            <div class="absolute -top-12 left-1/2 -translate-x-1/2">
+                                <img src="./images/Dr.-Engr.-Faruque-Hossain.jpg" alt="Director"
+                                    class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover group-hover:border-red-600 transition duration-500">
+                            </div>
+                            <div class="mt-12">
+                                <p class="text-gray-600 italic text-sm leading-relaxed mb-6">
+                                    "প্রযুক্তির এই যুগে দক্ষ মানবসম্পদ তৈরির কোনো বিকল্প নেই। NPI তার শুরু থেকেই
+                                    মানসম্মত শিক্ষা নিশ্চিতে প্রতিশ্রুতিবদ্ধ।"
+                                </p>
+                                <h4 class="text-lg font-extrabold text-gray-800">Dr. Engr. Faruque Hossain</h4>
+                                <p class="text-red-600 font-bold text-xs uppercase tracking-widest mt-1">Director, NPI
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section (Student & Parents Feedback) -->
+            <section class="bg-gray-50 py-20 px-4">
+                <div class="max-w-7xl mx-auto">
+
+                    <!-- Section Titles -->
+                    <div class="grid md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h2 class="text-3xl font-bold text-red-600 uppercase border-l-4 border-red-600 pl-4">Student
+                                Feedback</h2>
+                        </div>
+                        <div class="hidden md:block">
+                            <h2 class="text-3xl font-bold text-red-600 uppercase border-l-4 border-red-600 pl-4">Parents
+                                Feedback</h2>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Grid (2x2) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                        <!-- Student 1 -->
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-500 relative border border-gray-100 group">
+                            <i
+                                class="fas fa-quote-right absolute top-6 right-8 text-4xl text-gray-100 group-hover:text-red-100 transition"></i>
+                            <p class="text-gray-600 italic leading-relaxed mb-8 relative z-10">
+                                "The Polytechnic Institute has contributed a lot to my success. All my teachers have
+                                always encouraged me during my diploma education journey. NPI ensures student
+                                participation not only in education but also in extracurricular activities."
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <img src="./images/Dr.-Engr.-Faruque-Hossain.jpg" alt="Student"
+                                    class="w-14 h-14 rounded-full object-cover border-2 border-red-600 p-0.5">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Alid Hasan Akash</h4>
+                                    <p class="text-xs text-red-600 font-semibold uppercase">Alumni, Computer Technology
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Student 2 -->
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-500 relative border border-gray-100 group">
+                            <i
+                                class="fas fa-quote-right absolute top-6 right-8 text-4xl text-gray-100 group-hover:text-red-100 transition"></i>
+                            <p class="text-gray-600 italic leading-relaxed mb-8 relative z-10">
+                                "I had a dream and the dream is to represent Bangladesh to other countries. Without
+                                wasting time during the lockdown, I have invented gas detectors, home automation, and
+                                clap sensors. My teachers always supported me."
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <img src="./images/2.jpg" alt="Student"
+                                    class="w-14 h-14 rounded-full object-cover border-2 border-red-600 p-0.5">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Naim Islam</h4>
+                                    <p class="text-xs text-red-600 font-semibold uppercase">Electrical, 1st Semester</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Parent Title for Mobile -->
+                        <div class="md:hidden mt-8">
+                            <h2 class="text-3xl font-bold text-red-600 uppercase border-l-4 border-red-600 pl-4">Parents
+                                Feedback</h2>
+                        </div>
+
+                        <!-- Parent 1 -->
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-500 relative border border-gray-100 group">
+                            <i
+                                class="fas fa-quote-left absolute top-6 right-8 text-4xl text-gray-100 group-hover:text-red-100 transition"></i>
+                            <p class="text-gray-600 italic leading-relaxed mb-8 relative z-10">
+                                "First thing is, I would like to thank the institute personally for continuing the
+                                education of the students during this hard time. Secondly, the insurance system they
+                                have launched is outstanding work."
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <img src="./images/chairman_npi.jpg" alt="Parent"
+                                    class="w-14 h-14 rounded-full object-cover border-2 border-blue-800 p-0.5">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Abir Rahman Dipto</h4>
+                                    <p class="text-xs text-blue-800 font-semibold uppercase">Guardian of CST Student</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Parent 2 -->
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-500 relative border border-gray-100 group">
+                            <i
+                                class="fas fa-quote-left absolute top-6 right-8 text-4xl text-gray-100 group-hover:text-red-100 transition"></i>
+                            <p class="text-gray-600 italic leading-relaxed mb-8 relative z-10">
+                                "When almost all the educational institutes are off, NPI is running their classes and I
+                                would really like to thank you for this. You have been in regular communication with me
+                                to ensure the attendance of my child."
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <img src="./images/2.jpg" alt="Parent"
+                                    class="w-14 h-14 rounded-full object-cover border-2 border-blue-800 p-0.5">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Mehrin Orthi</h4>
+                                    <p class="text-xs text-blue-800 font-semibold uppercase">Guardian of Civil Student
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Recent News & Events Section -->
+            <section class="bg-white py-20 px-4">
+                <div class="max-w-7xl mx-auto">
+
+                    <!-- Section Header -->
+                    <div class="flex justify-between items-end mb-12">
+                        <div>
+                            <h2 class="text-3xl font-bold text-red-600 uppercase border-l-4 border-red-600 pl-4">Recent
+                                News & Events</h2>
+                            <p class="text-gray-500 mt-2">Stay updated with the latest happenings at NPI</p>
+                        </div>
+                        <a href="news-blogs.html?filter=news"
+                            class="hidden md:block text-red-600 font-bold hover:underline">
+                            View All News <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- News Grid (3 Columns) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <!-- News Card 1: Admission -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition duration-500 group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="./images/79.ADOBE.jpg" alt="Admission"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    Admission</div>
+                            </div>
+                            <div class="p-8">
+                                <p class="text-gray-400 text-xs font-bold mb-3"><i
+                                        class="far fa-calendar-alt mr-2 text-red-600"></i> May 25, 2024</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-800 leading-tight group-hover:text-red-600 transition h-14 overflow-hidden">
+                                    ২০২৪-২৫ শিক্ষাবর্ষে ডিপ্লোমা ইন ইঞ্জিনিয়ারিংয়ে ভর্তি চলছে</h3>
+                                <p class="text-gray-500 text-sm mt-4 line-clamp-3">কারিগরি শিক্ষা বোর্ড অনুমোদিত সকল
+                                    টেকনোলজিতে সীমিত আসনে সরাসরি ভর্তি কার্যক্রম শুরু হয়েছে। ভর্তির বিস্তারিত তথ্য ও
+                                    স্কলারশিপ...</p>
+                                <a href="news-details.html?id=1"
+                                    class="inline-block mt-6 text-red-600 font-bold uppercase text-xs border-b-2 border-transparent hover:border-red-600 transition">Read
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <!-- News Card 2: Job Fair -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition duration-500 group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="./images/cst.jpg" alt="Job Fair"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-blue-900 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    Placement</div>
+                            </div>
+                            <div class="p-8">
+                                <p class="text-gray-400 text-xs font-bold mb-3"><i
+                                        class="far fa-calendar-alt mr-2 text-red-600"></i> May 10, 2024</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-800 leading-tight group-hover:text-red-600 transition h-14 overflow-hidden">
+                                    এনপিআই জব ফেয়ার ২০২৪: ৫০০+ চাকরির সুযোগ</h3>
+                                <p class="text-gray-500 text-sm mt-4 line-clamp-3">দেশী-বিদেশী শীর্ষস্থানীয় ৫০টি শিল্প
+                                    প্রতিষ্ঠানের অংশগ্রহণে এনপিআই মানিকগঞ্জ ক্যাম্পাসে অনুষ্ঠিত হয়ে গেল জমকালো চাকরি
+                                    মেলা...</p>
+                                <a href="news-details.html?id=2"
+                                    class="inline-block mt-6 text-red-600 font-bold uppercase text-xs border-b-2 border-transparent hover:border-red-600 transition">Read
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <!-- News Card 3: Routine -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition duration-500 group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="./images/mechanical.jpg" alt="Routine"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-green-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    Academic</div>
+                            </div>
+                            <div class="p-8">
+                                <p class="text-gray-400 text-xs font-bold mb-3"><i
+                                        class="far fa-calendar-alt mr-2 text-red-600"></i> April 20, 2024</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-800 leading-tight group-hover:text-red-600 transition h-14 overflow-hidden">
+                                    প্রবিধান ২০২২-এর সেমিস্টার ফাইনাল পরীক্ষার রুটিন প্রকাশ</h3>
+                                <p class="text-gray-500 text-sm mt-4 line-clamp-3">কারিগরি শিক্ষা বোর্ড কর্তৃক ১ম, ৩য়
+                                    এবং ৫ম সেমিস্টার ফাইনাল পরীক্ষার রুটিন প্রকাশিত হয়েছে। শিক্ষার্থীরা অনলাইন থেকে এটি
+                                    সংগ্রহ করতে পারবে...</p>
+                                <a href="news-details.html?id=3"
+                                    class="inline-block mt-6 text-red-600 font-bold uppercase text-xs border-b-2 border-transparent hover:border-red-600 transition">Read
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <!-- News Card 4: Robotics -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 group border">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="./images/Electrical.jpg" alt="Robotics"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    Workshop</div>
+                            </div>
+                            <div class="p-8">
+                                <p class="text-gray-400 text-xs font-bold mb-3"><i
+                                        class="far fa-calendar-alt mr-2 text-red-600"></i> March 15, 2024</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-800 leading-tight group-hover:text-red-600 transition h-14 overflow-hidden">
+                                    এনপিআইতে রোবোটিক্স ও আইওটি নিয়ে বিশেষ কর্মশালা</h3>
+                                <p class="text-gray-500 text-sm mt-4 line-clamp-3">চতুর্থ শিল্প বিপ্লবের চ্যালেঞ্জ
+                                    মোকাবিলায় শিক্ষার্থীদের জন্য ৩ দিনব্যাপী ইন্ডাস্ট্রিয়াল অটোমেশন প্রশিক্ষণ প্রদান করা
+                                    হয়েছে...</p>
+                                <a href="news-details.html?id=4"
+                                    class="inline-block mt-6 text-red-600 font-bold uppercase text-xs border-b-2 border-transparent hover:border-red-600 transition">Read
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <!-- News Card 5: Blood Donation -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 group border">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="./images/OIP.webp" alt="Blood Donation"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    Social</div>
+                            </div>
+                            <div class="p-8">
+                                <p class="text-gray-400 text-xs font-bold mb-3"><i
+                                        class="far fa-calendar-alt mr-2 text-red-600"></i> Feb 28, 2024</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-800 leading-tight group-hover:text-red-600 transition h-14 overflow-hidden">
+                                    ব্লাড ডোনার ক্লাবের উদ্যোগে রক্তদান কর্মসূচি সম্পন্ন</h3>
+                                <p class="text-gray-500 text-sm mt-4 line-clamp-3">এনপিআই ব্লাড ডোনার ক্লাব এবং রেড
+                                    ক্রিসেন্ট সোসাইটির যৌথ উদ্যোগে ক্যাম্পাস প্রাঙ্গণে প্রায় ১০০ ব্যাগ রক্ত সংগ্রহ করা
+                                    হয়েছে...</p>
+                                <a href="news-details.html?id=5"
+                                    class="inline-block mt-6 text-red-600 font-bold uppercase text-xs border-b-2 border-transparent hover:border-red-600 transition">Read
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <!-- News Card 6: Excursion -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 group border">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="./images/civil.jpg" alt="Excursion"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-orange-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                                    Excursion</div>
+                            </div>
+                            <div class="p-8">
+                                <p class="text-gray-400 text-xs font-bold mb-3"><i
+                                        class="far fa-calendar-alt mr-2 text-red-600"></i> Jan 12, 2024</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-800 leading-tight group-hover:text-red-600 transition h-14 overflow-hidden">
+                                    সিভিল টেকনোলজির শিক্ষার্থীদের ইন্ডাস্ট্রিয়াল ভিজিট</h3>
+                                <p class="text-gray-500 text-sm mt-4 line-clamp-3">বাস্তব কর্মক্ষেত্রে কনক্রিট মিক্সিং ও
+                                    স্ট্রাকচারাল ডিজাইন শিখতে শিক্ষার্থীরা সাভারের একটি আধুনিক কনস্ট্রাকশন সাইট পরিদর্শন
+                                    করেন...</p>
+                                <a href="news-details.html?id=6"
+                                    class="inline-block mt-6 text-red-600 font-bold uppercase text-xs border-b-2 border-transparent hover:border-red-600 transition">Read
+                                    More</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Mobile View All Button -->
+                    <div class="text-center mt-12 md:hidden">
+                        <a href="news-blogs.html?filter=news"
+                            class="bg-red-600 text-white px-8 py-3 rounded-full font-bold uppercase text-sm shadow-lg hover:bg-gray-900 transition">View
+                            All News</a>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+            <!-- Swiper JS for Functionality -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+                // আপনি যদি ইমেজ স্লাইডার অ্যাড করতে চান তবে এই কোড কাজ করবে
+                const swiper = new Swiper('.swiper', {
+                    loop: true,
+                    autoplay: { delay: 3000 },
+                    pagination: { el: '.swiper-pagination' },
+                });
+            </script>
+
+
+            <!-- Footer Section - Full Width Background -->
+
+            <footer
+                class="w-full bg-[#0f172a] text-white pt-20 pb-10 border-t-8 border-red-600 relative overflow-hidden">
+
+                <!-- Decorative Pattern Overlay (পুরো ব্যাকগ্রাউন্ড জুড়ে থাকবে) -->
+                <div class=" absolute inset-0 dots-bg opacity-5 pointer-events-none"></div>
+
+                <!-- Inner Container - কন্টেন্ট মাঝখানে রাখার জন্য mx-auto এবং max-w-7xl -->
+                <div class=" mx-auto px-6 md:px-12 relative z-10">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                        <!-- Column 1: About Institute -->
+                        <div class="space-y-6">
+                            <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo"
+                                class="h-16 bg-white p-1 rounded-sm shadow-lg">
+                            <p class="text-gray-400 text-sm leading-relaxed text-justify italic">
+                                National Polytechnic Institute (NPI) is a premier technical institution committed to
+                                producing world-class engineers. With modern labs and expert faculty, we bridge the gap
+                                between education and industry.
+                            </p>
+                            <div class="flex space-x-3">
+                                <a href="#"
+                                    class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i
+                                        class="fab fa-youtube"></i></a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Quick Links -->
+                        <div class="lg:pl-10">
+                            <h4
+                                class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">
+                                Information</h4>
+                            <ul class="space-y-4 text-sm font-medium text-gray-400">
+                                <li><a href="admissonform.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Online Admission</a></li>
+                                <li><a href="internal-result.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Board Results</a></li>
+                                <li><a href="notice-board.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Academic Notice</a></li>
+                                <li><a href="class-routine.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Class Routine</a></li>
+                                <li><a href="syllabus.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Syllabus Download</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Engineering Dept. -->
+                        <div>
+                            <h4
+                                class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">
+                                Departments</h4>
+                            <ul class="space-y-4 text-sm font-medium text-gray-400">
+                                <li><a href="./Details Admisson Page/computer-details.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Computer Science & Tech</a></li>
+                                <li><a href="./Details Admisson Page/electrical-details.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Electrical Technology</a></li>
+                                <li><a href="./Details Admisson Page/civil-details.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Civil Technology</a></li>
+                                <li><a href="./Details Admisson Page/mechanical-details.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Mechanical Technology</a></li>
+                                <li><a href="./Details Admisson Page/textile-details.html"
+                                        class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">»
+                                        Textile Engineering</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4: Contact Us -->
+                        <div class="space-y-6">
+                            <h4
+                                class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">
+                                Contact Us</h4>
+                            <div class="space-y-5">
+                                <div class="flex items-start gap-4 group">
+                                    <div
+                                        class="w-10 h-10 bg-red-600/10 text-red-600 rounded-xl flex items-center justify-center flex-none group-hover:bg-red-600 group-hover:text-white transition duration-500 shadow-lg">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <p class="text-sm text-gray-400 italic">173/3, Narangai Bustand, Manikgonj Sadar,
+                                        Manikganj.</p>
+                                </div>
+                                <div class="flex items-center gap-4 group">
+                                    <div
+                                        class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-blue-600 group-hover:text-white transition duration-500 shadow-lg">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <p class="text-sm text-gray-400 font-bold tracking-widest">01711-349947,
+                                        01911-316010</p>
+                                </div>
+                                <div class="flex items-center gap-4 group">
+                                    <div
+                                        class="w-10 h-10 bg-purple-600/10 text-purple-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-purple-600 group-hover:text-white transition duration-500 shadow-lg">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <p class="text-sm text-gray-400 font-bold">info@npi.edu.bd</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Copyright Bar -->
+                    <div
+                        class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em]">
+                            © 2024 <span class="text-white uppercase font-black tracking-widest">National Polytechnic
+                                Institute</span>. All Rights Reserved.
+                        </p>
+                        <div
+                            class="flex space-x-6 text-[10px] font-black uppercase text-gray-500 tracking-widest items-center">
+                            <a href="#" class="hover:text-red-500 transition">Privacy Policy</a>
+                            <span class="text-white opacity-20">|</span>
+                            <a href=""
+                                class="text-white hover:text-red-600 transition underline underline-offset-4 decoration-red-600">Developed
+                                by Nazmul CST 5th</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+</body>
+
+</html>
