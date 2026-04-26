@@ -2831,21 +2831,6 @@
             }
         ]
 
-        function getGradeInfo(obtained, credit) {
-            let fullMark = (credit === 4) ? 30 : (credit === 3) ? 20 : 10;
-            let percent = (obtained / fullMark) * 100;
-            let g = "F", p = 0.00;
-            if (percent >= 80) { g = "A+"; p = 4.00; }
-            else if (percent >= 75) { g = "A"; p = 3.75; }
-            else if (percent >= 70) { g = "A-"; p = 3.50; }
-            else if (percent >= 65) { g = "B+"; p = 3.25; }
-            else if (percent >= 60) { g = "B"; p = 3.00; }
-            else if (percent >= 55) { g = "B-"; p = 2.75; }
-            else if (percent >= 50) { g = "C+"; p = 2.50; }
-            else if (percent >= 45) { g = "C"; p = 2.25; }
-            return { g, p, fullMark };
-        }
-
         function getMarksheet() {
             const tech = document.getElementById('techSelect').value;
             const sem = document.getElementById('semSelect').value;
@@ -2853,8 +2838,14 @@
             const wrapper = document.getElementById('marksheet-wrapper');
 
             const techObj = technologiesData.find(t => t.technology === tech);
+
             if (techObj) {
-                const semObj = techObj.semesters.find(s => s.semester === sem && s.student.roll === roll);
+                // ✅ ফিক্সড লজিক: দুই ধরনের ডাটা স্ট্রাকচার সাপোর্ট করবে
+                const semObj = techObj.semesters.find(s => {
+                    const semesterValue = s.semester || s.student?.semester;
+                    return semesterValue === sem && s.student.roll === roll;
+                });
+
                 if (semObj) {
                     wrapper.style.display = 'block';
                     document.getElementById('resName').innerText = semObj.student.name;
@@ -2870,29 +2861,25 @@
                         const res = getGradeInfo(sub.midterm_marks, sub.credit);
                         totalObtained += sub.midterm_marks;
                         totalPoints += res.p;
-                        html += `<tr class="border-b border-gray-50"><td class="py-6 uppercase text-gray-500 font-extrabold text-[12px] tracking-tight">${sub.name}</td><td class="py-6 text-center text-gray-400 font-black">${res.fullMark}</td><td class="py-6 text-center text-xl text-gray-800 font-black">${sub.midterm_marks}</td><td class="py-6 text-center"><span class="bg-gray-100 px-5 py-1.5 rounded-xl text-xs font-black">${res.g}</span></td></tr>`;
+                        html += `<tr class="border-b border-gray-50">
+                    <td class="py-6 uppercase text-gray-500 font-extrabold text-[12px] tracking-tight">${sub.name}</td>
+                    <td class="py-6 text-center text-gray-400 font-black">${res.fullMark}</td>
+                    <td class="py-6 text-center text-xl text-gray-800 font-black">${sub.midterm_marks}</td>
+                    <td class="py-6 text-center"><span class="bg-gray-100 px-5 py-1.5 rounded-xl text-xs font-black">${res.g}</span></td>
+                </tr>`;
                     });
 
                     document.getElementById('mRows').innerHTML = html;
                     document.getElementById('resTotal').innerText = totalObtained;
                     document.getElementById('resGPA').innerText = (totalPoints / semObj.subjects.length).toFixed(2);
+
                     window.scrollTo({ top: wrapper.offsetTop - 50, behavior: 'smooth' });
                 } else {
-                    alert("No Data Found! Check Roll & Semester.");
+                    alert("❌ No Data Found! Please check Roll Number & Semester.");
                 }
             } else {
-                alert("Technology Data not loaded!");
+                alert("⚠️ Technology Data not loaded!");
             }
-        }
-
-        function downloadJPG() {
-            const area = document.getElementById('capture-area');
-            html2canvas(area, { scale: 3 }).then(canvas => {
-                const link = document.createElement('a');
-                link.download = `NPI-Marksheet-${document.getElementById('resRoll').innerText}.jpg`;
-                link.href = canvas.toDataURL("image/jpeg", 0.9);
-                link.click();
-            });
         }
     </script>
 </body>
