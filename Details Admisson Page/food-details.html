@@ -89,13 +89,18 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Header (Consistent with your Index) -->
-   <header class="bg-white sticky top-0 z-50 shadow-md">
+     <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
             <!-- Logo -->
             <a href="../index.html">
-                <img src="../images/Cover Page -Operating System-F.jpg" alt="NPI Logo" class="h-16">
+                <img src="../images/Cover Page -Operating System-F.jpg" alt="NPI Logo"
+                    class="h-12 sm:h-14 md:h-16 object-contain">
             </a>
+            <!-- Logo এর পরে, nav এর আগে এই Button টি বসান -->
+            <button onclick="toggleSidebar()" class="md:hidden lg:hidden text-gray-700 p-2 ml-auto">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
 
             <nav class="hidden md:flex space-x-6 font-semibold text-gray-700 uppercase text-sm items-center">
                 <a href="../index.html" class="text-red-main">Home</a>
@@ -128,7 +133,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../admissonform.html"
+                            <a href="../administration.html"
                                 class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
                                 <i class="fas fa-user-tie mr-2 text-[10px]"></i> Administration
                             </a>
@@ -182,10 +187,11 @@
                                 <li><a href="./textile-details.html"
                                         class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Textile
                                         Engineering</a></li>
-                                <li><a href="./automobile-details.html"
-                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile Engineering</a></li>
-                               
-                    
+                                <li><a href="./utomobile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile
+                                        Engineering</a></li>
+
+
                             </ul>
                         </li>
 
@@ -220,7 +226,7 @@
                         <li class="border-b border-gray-100"><a href="../notice-board.html"
                                 class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Notice
                                 Board</a></li>
-                        <li class="border-b border-gray-100"><a href="../syllabus.html"
+                        <li class="border-b border-gray-100"><a href="../syllabus.html."
                                 class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Course
                                 & Syllabus</a></li>
                         <li class="border-b border-gray-100"><a href="../class-routine.html"
@@ -229,14 +235,15 @@
                         <li class="border-b border-gray-100"><a href="../academic-calendar.html"
                                 class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Academic
                                 Calendar</a></li>
-                     
-                        <!-- BTEB Result (Direct Link) -->
+
                         <li class="border-b border-gray-100"><a href="../internal-result.html"
                                 class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
                                 BTEB Result </a></li>
+
                     </ul>
                 </div>
-                 <div class="relative dropdown group cursor-pointer py-4">
+                <!-- Blogs Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
                     <a href="../news-blogs.html"
                         class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
                         Blogs <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
@@ -260,7 +267,8 @@
                 <a href="../contact.html" class="hover:text-red-main">Contact</a>
             </nav>
 
-            <div class="flex items-center space-x-4">
+
+            <div class="hidden md:flex items-center space-x-4">
                 <div class="flex space-x-3 text-blue-800">
                     <i class="fab fa-facebook cursor-pointer"></i>
                     <i class="fab fa-youtube cursor-pointer"></i>
@@ -269,6 +277,155 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-overlay" onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar">
+        <!-- Sidebar Header (Dark Blue) -->
+        <div class="p-6 bg-text-white flex justify-between items-center shadow-lg">
+            <div>
+                <h2 class="font-black text-sm uppercase tracking-widest">NPI MENU</h2>
+                <p class="text-[9px] text-white-500 font-bold uppercase">National Polytechnic Institute</p>
+            </div>
+            <button onclick="toggleSidebar()" class="text-3xl">&times;</button>
+        </div>
+
+        <!-- Sidebar List (Your Screenshot Design) -->
+        <div class="flex flex-col">
+            <!-- HOME -->
+            <a href="../index.html" class="mobile-link text-red-600 bg-red-50/50">
+                <span><i class="fas fa-home mr-3"></i> HOME</span>
+            </a>
+
+            <!-- ABOUT US Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-about')" class="mobile-link">
+                    <span><i class="fas fa-university mr-3 text-blue-800"></i> About Us</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-about"></i>
+                </div>
+                <div id="mob-about" class="mob-content">
+                    <a href="../at-a-glance.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">At A Glance</a>
+                    <a href="../history.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">History of
+                        NPI</a>
+                    <a href="../mission-vision.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Mission &
+                        Vision</a>
+                    <a href="../administration.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">History of
+                        NPI</a>
+                    <a href="../photo-gallery.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Mission &
+                        Vision</a>
+                </div>
+            </div>
+
+            <!-- ADMISSION Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-adm')" class="mobile-link">
+                    <span><i class="fas fa-user-graduate mr-3 text-blue-800"></i> Admission</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-adm"></i>
+                </div>
+                <div id="mob-adm" class="mob-content">
+                    <a href="../admissonform.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Online
+                        Admission</a>
+                    <a href="../circular.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Admission
+                        Circular</a>
+                    <a href="../campus-life.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Campus Life</a>
+                    <a href="../tuition-fees.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Tution Fees</a>
+                    <!-- Departments nested inside sidebar -->
+                    <div class="bg-white p-4 pl-14">
+                        <p class="text-[10px] font-black text-blue-900 mb-2 uppercase">Departments:</p>
+                        <div class="space-y-3 first-letter:uppercase text-[12px] text-gray-500">
+                            <a href="./computer-details.html" class="block">» Computer
+                                Engineering</a>
+                            <a href="./civil-details.html" class="block">» Civil Engineering</a>
+                            <a href="./electrical-details.html" class="block">» Electrical
+                                Engineering</a>
+                            <a href="./architecture-details.html" class="block">» Architecture
+                                Engineering</a>
+                            <a href="./mechanical-details.html" class="block">» Mechanical
+                                Engineering</a>
+                            <a href="./food-details.html" class="block">» Food Engineering</a>
+                            <a href="./textile-details.html" class="block">» Textile
+                                Engineering</a>
+                            <a href="./computer-details.html" class="block">» Automobile
+                                Engineering</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACADEMIC Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-aca')" class="mobile-link">
+                    <span><i class="fas fa-book-reader mr-3 text-blue-800"></i> Academic</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-aca"></i>
+                </div>
+                <div id="mob-aca" class="mob-content">
+                    <a href="../notice-board.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Notice Board</a>
+                    <a href="../class-routine.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Student
+                        Routine</a>
+                    <a href="../syllabus.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Course &
+                        Syllabus</a>
+                    <a href="../academic-calendar.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Academic
+                        Calendar</a>
+                    <a href="../internal-result.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">BTEB
+                        Result</a>
+                </div>
+            </div>
+
+            <!-- NEWS & BLOGS Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-blog')" class="mobile-link">
+                    <span>
+                        <i class="fas fa-newspaper mr-3 text-blue-800"></i>
+                        News & Blogs
+                    </span>
+
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-blog"></i>
+                </div>
+
+                <div id="mob-blog" class="mob-content">
+                    <a href="../news-blogs.html?filter=news"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Latest News
+                    </a>
+
+                    <a href="../news-blogs.html?filter=blog"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Our Blogs
+                    </a>
+
+
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <a href="../contact.html" class="mobile-link">
+                <span><i class="fas fa-phone-alt mr-3 text-blue-800"></i> Contact Us</span>
+            </a>
+
+            <!-- Footer of Sidebar -->
+            <div class="p-10 flex flex-col items-center gap-6 mt-10 border-t">
+                <div class="flex gap-6 text-2xl text-[#1d4289]">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </div>
 
     <main class="flex-grow">
         <!-- Page Banner -->
