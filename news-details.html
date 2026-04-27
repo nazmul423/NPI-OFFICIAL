@@ -59,6 +59,76 @@
         .group-hover-submenu:hover .submenu {
             display: block;
         }
+        
+        /* ২. মোবাইল সাইডবার স্লাইড এনিমেশন (ডান পাশ থেকে আসবে) */
+        #mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 320px;
+           background: rgb(255, 255, 255);
+            z-index: 1200;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        #mobile-sidebar.open {
+            transform: translateX(0);
+        }
+
+        #mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1100;
+            display: none;
+            backdrop-filter: blur(4px);
+        }
+
+        #mobile-overlay.show {
+            display: block;
+        }
+
+        /* মোবাইল একর্ডিয়ন (Nested Menu) স্টাইল */
+        .mob-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f8fafc;
+        }
+
+        .mob-content.active {
+            max-height: 1000px;
+        }
+
+        /* এনিমেশনের জন্য বড় হাইট */
+        .rotate-icon {
+            transition: transform 0.3s;
+        }
+
+        .rotate-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .mobile-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            border-bottom: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .mobile-link:hover {
+            background: #f1f5f9;
+            color: #dc2626;
+        }
     </style>
 </head>
 
@@ -66,12 +136,18 @@
 
     <!-- Header Section (আপনার ইনডেক্স পেজের Navbar এখানে বসাবেন) -->
       <!-- Header & Navigation -->
+       <!-- Header & Navigation -->
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
             <!-- Logo -->
             <a href="./index.html">
-                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo" class="h-16">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo"
+                    class="h-12 sm:h-14 md:h-16 object-contain">
             </a>
+            <!-- Logo এর পরে, nav এর আগে এই Button টি বসান -->
+            <button onclick="toggleSidebar()" class="md:hidden lg:hidden text-gray-700 p-2 ml-auto">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
 
             <nav class="hidden md:flex space-x-6 font-semibold text-gray-700 uppercase text-sm items-center">
                 <a href="./index.html" class="text-red-main">Home</a>
@@ -159,9 +235,10 @@
                                         class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Textile
                                         Engineering</a></li>
                                 <li><a href="./Details Admisson Page/automobile-details.html"
-                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile Engineering</a></li>
-                               
-                    
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile
+                                        Engineering</a></li>
+
+
                             </ul>
                         </li>
 
@@ -237,7 +314,8 @@
                 <a href="#" class="hover:text-red-main">Contact</a>
             </nav>
 
-            <div class="flex items-center space-x-4">
+
+            <div class="hidden md:flex items-center space-x-4">
                 <div class="flex space-x-3 text-blue-800">
                     <i class="fab fa-facebook cursor-pointer"></i>
                     <i class="fab fa-youtube cursor-pointer"></i>
@@ -247,6 +325,158 @@
         </div>
     </header>
 
+
+    
+
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-overlay" onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar">
+        <!-- Sidebar Header (Dark Blue) -->
+        <div class="p-6 bg-text-white flex justify-between items-center shadow-lg">
+            <div>
+                <h2 class="font-black text-sm uppercase tracking-widest">NPI MENU</h2>
+                <p class="text-[9px] text-white-500 font-bold uppercase">National Polytechnic Institute</p>
+            </div>
+            <button onclick="toggleSidebar()" class="text-3xl">&times;</button>
+        </div>
+
+        <!-- Sidebar List (Your Screenshot Design) -->
+        <div class="flex flex-col">
+            <!-- HOME -->
+            <a href="./index.html" class="mobile-link text-red-600 bg-red-50/50">
+                <span><i class="fas fa-home mr-3"></i> HOME</span>
+            </a>
+
+            <!-- ABOUT US Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-about')" class="mobile-link">
+                    <span><i class="fas fa-university mr-3 text-blue-800"></i> About Us</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-about"></i>
+                </div>
+                <div id="mob-about" class="mob-content">
+                    <a href="./at-a-glance.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">At A Glance</a>
+                    <a href="./history.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">History of
+                        NPI</a>
+                    <a href="./mission-vision.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Mission &
+                        Vision</a>
+                    <a href="./administration.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">History of
+                        NPI</a>
+                    <a href="./photo-gallery.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Mission &
+                        Vision</a>
+                </div>
+            </div>
+
+            <!-- ADMISSION Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-adm')" class="mobile-link">
+                    <span><i class="fas fa-user-graduate mr-3 text-blue-800"></i> Admission</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-adm"></i>
+                </div>
+                <div id="mob-adm" class="mob-content">
+                    <a href="./admissonform.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Online
+                        Admission</a>
+                    <a href="./circular.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Admission
+                        Circular</a>
+                    <a href="./campus-life.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Campus Life</a>
+                    <a href="./tuition-fees.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Tution Fees</a>
+                    <!-- Departments nested inside sidebar -->
+                    <div class="bg-white p-4 pl-14">
+                        <p class="text-[10px] font-black text-blue-900 mb-2 uppercase">Departments:</p>
+                        <div class="space-y-3 first-letter:uppercase text-[12px] text-gray-500">
+                            <a href="./Details Admisson Page/computer-details.html" class="block">» Computer
+                                Engineering</a>
+                            <a href="./Details Admisson Page/civil-details.html" class="block">» Civil Engineering</a>
+                            <a href="./Details Admisson Page/electrical-details.html" class="block">» Electrical
+                                Engineering</a>
+                            <a href="./Details Admisson Page/architecture-details.html" class="block">» Architecture
+                                Engineering</a>
+                            <a href="./Details Admisson Page/mechanical-details.html" class="block">» Mechanical
+                                Engineering</a>
+                            <a href="./Details Admisson Page/food-details.html" class="block">» Food Engineering</a>
+                            <a href="./Details Admisson Page/textile-details.html" class="block">» Textile
+                                Engineering</a>
+                            <a href="./Details Admisson Page//automobile-details.html" class="block">» Automobile
+                                Engineering</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACADEMIC Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-aca')" class="mobile-link">
+                    <span><i class="fas fa-book-reader mr-3 text-blue-800"></i> Academic</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-aca"></i>
+                </div>
+                <div id="mob-aca" class="mob-content">
+                    <a href="./notice-board.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Notice Board</a>
+                    <a href="./class-routine.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Student
+                        Routine</a>
+                    <a href="./syllabus.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Course &
+                        Syllabus</a>
+                    <a href="./academic-calendar.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Academic
+                        Calendar</a>
+                    <a href="./internal-result.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">BTEB
+                        Result</a>
+                </div>
+            </div>
+
+            <!-- NEWS & BLOGS Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-blog')" class="mobile-link">
+                    <span>
+                        <i class="fas fa-newspaper mr-3 text-blue-800"></i>
+                        News & Blogs
+                    </span>
+
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-blog"></i>
+                </div>
+
+                <div id="mob-blog" class="mob-content">
+                    <a href="./news-blogs.html?filter=news"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Latest News
+                    </a>
+
+                    <a href="./news-blogs.html?filter=blog"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Our Blogs
+                    </a>
+
+
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <a href="#" class="mobile-link">
+                <span><i class="fas fa-phone-alt mr-3 text-blue-800"></i> Contact Us</span>
+            </a>
+
+            <!-- Footer of Sidebar -->
+            <div class="p-10 flex flex-col items-center gap-6 mt-10 border-t">
+                <div class="flex gap-6 text-2xl text-[#1d4289]">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </div>
     <main class="flex-grow">
         <!-- News Title Header -->
         <section class="bg-white border-b py-16 dots-bg">
@@ -357,11 +587,14 @@
             <div class="lg:pl-10">
                 <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Information</h4>
                 <ul class="space-y-4 text-sm font-medium text-gray-400">
-                    <li><a href="admissonform.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Online Admission</a></li>
-                    <li><a href="internal-result.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Board Results</a></li>
-                    <li><a href="notice-board.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Academic Notice</a></li>
-                    <li><a href="class-routine.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Class Routine</a></li>
-                    <li><a href="syllabus.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Syllabus Download</a></li>
+                    <li><a href="./admissonform.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Online Admission</a></li>
+                    <li><a href="./internal-result.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Board Results</a></li>
+                    <li><a href="./notice-board.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Academic Notice</a></li>
+                    <li><a href="./class-routine.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Class Routine</a></li>
+                    <li><a href="./syllabus.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Syllabus Download</a></li>
+                    <li><a href="./news-blogs.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Academic Notice</a></li>
+                    <li><a href="./circular.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Class Routine</a></li>
+                    <li><a href="./contact.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Syllabus Download</a></li>
                 </ul>
             </div>
 
@@ -369,11 +602,14 @@
             <div>
                 <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Departments</h4>
                 <ul class="space-y-4 text-sm font-medium text-gray-400">
-                    <li><a href="details/computer.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Computer Science & Tech</a></li>
-                    <li><a href="details/electrical.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Electrical Technology</a></li>
-                    <li><a href="details/civil.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Civil Technology</a></li>
-                    <li><a href="details/mechanical.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Mechanical Technology</a></li>
-                    <li><a href="details/textile.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Textile Engineering</a></li>
+                    <li><a href="./Details Admisson Page/computer-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Computer Science & Tech</a></li>
+                    <li><a href="./Details Admisson Page/electrical-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Electrical Technology</a></li>
+                    <li><a href="./Details Admisson Page/civil-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Civil Technology</a></li>
+                    <li><a href="./Details Admisson Page/mechanical-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Mechanical Technology</a></li>
+                    <li><a href="./Details Admisson Page/food-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Food Engineering</a></li>
+                    <li><a href="./Details Admisson Page/automobile-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Automobile Technology</a></li>
+                    <li><a href="./Details Admisson Page/architecture-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Architecture Technology</a></li>
+                    <li><a href="./Details Admisson Page/textile-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Textile Engineering</a></li>
                 </ul>
             </div>
 
@@ -550,6 +786,37 @@
             });
         };
     </script>
+
+      <script>
+            // ১. সাইডবার ওপেন/ক্লোজ
+            function toggleSidebar() {
+                document.getElementById('mobile-sidebar').classList.toggle('open');
+                document.getElementById('mobile-overlay').classList.toggle('show');
+
+                // সাইডবার খুললে বডির স্ক্রল বন্ধ করা
+                if (document.getElementById('mobile-sidebar').classList.contains('open')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            // ২. মোবাইল একর্ডিয়ন ড্রপডাউন
+            function toggleAcc(id) {
+                const content = document.getElementById(id);
+                const icon = document.getElementById('ico-' + id);
+                content.classList.toggle('active');
+                icon.classList.toggle('active');
+            }
+
+            function toggleAcc(id) {
+                const content = document.getElementById(id);
+                const icon = document.getElementById('ico-' + id);
+
+                content.classList.toggle('active');
+                icon.classList.toggle('active');
+            }
+        </script>
 
 </body>
 

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | National Polytechnic Institute, Manikganj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --npi-red: #ed1c24;
+            --npi-blue: #1d4289;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .dots-bg {
+            background-image: radial-gradient(#d1d5db 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+        }
+
+        /* Navbar Dropdown */
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 1000;
+        }
+
+        /* Input Focus Style */
+        .contact-input:focus {
+            border-color: var(--npi-red);
+            box-shadow: 0 0 15px rgba(237, 28, 36, 0.1);
+        }
+
+        /* ২. মোবাইল সাইডবার স্লাইড এনিমেশন (ডান পাশ থেকে আসবে) */
+        #mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 320px;
+            background: rgb(255, 255, 255);
+            z-index: 1200;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        #mobile-sidebar.open {
+            transform: translateX(0);
+        }
+
+        #mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1100;
+            display: none;
+            backdrop-filter: blur(4px);
+        }
+
+        #mobile-overlay.show {
+            display: block;
+        }
+
+        /* মোবাইল একর্ডিয়ন (Nested Menu) স্টাইল */
+        .mob-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f8fafc;
+        }
+
+        .mob-content.active {
+            max-height: 1000px;
+        }
+
+        /* এনিমেশনের জন্য বড় হাইট */
+        .rotate-icon {
+            transition: transform 0.3s;
+        }
+
+        .rotate-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .mobile-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            border-bottom: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .mobile-link:hover {
+            background: #f1f5f9;
+            color: #dc2626;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
+            <!-- Logo -->
+            <a href="./index.html">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo"
+                    class="h-12 sm:h-14 md:h-16 object-contain">
+            </a>
+            <!-- Logo এর পরে, nav এর আগে এই Button টি বসান -->
+            <button onclick="toggleSidebar()" class="md:hidden lg:hidden text-gray-700 p-2 ml-auto">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-700 uppercase text-sm items-center">
+                <a href="./index.html" class="text-red-main">Home</a>
+
+                <!-- About Us Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="./at-a-glance.html" class="hover:text-red-main transition flex items-center">
+                        About Us <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown Menu Box -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-64 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50 overflow-hidden">
+                        <li>
+                            <a href="./at-a-glance.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bolt mr-2 text-[10px]"></i> At A Glance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./history.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-history mr-2 text-[10px]"></i> History of NPI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./mission-vision.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-bullseye mr-2 text-[10px]"></i> Mission and Vision
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./administration.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                <i class="fas fa-user-tie mr-2 text-[10px]"></i> Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./photo-gallery.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                <i class="fas fa-image mr-2 text-[10px]"></i> Photo Gallery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admission Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Admission <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Main Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+
+                        <!-- Nested Dropdown: Departments (Hover to see technology list) -->
+                        <li class="relative group-hover-submenu">
+                            <a href="#"
+                                class="flex justify-between items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">
+                                Departments <i class="fas fa-chevron-right text-[10px]"></i>
+                            </a>
+
+                            <!-- Sub-menu (List of Technologies for Details Page) -->
+                            <ul class="submenu bg-white shadow-2xl rounded-md w-72 border-t-4 border-red-600">
+                                <li><a href="./Details Admisson Page/computer-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Computer
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/civil-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Civil
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/electrical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Electrical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/architecture-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Architecture
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/mechanical-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Mechanical
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/food-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Food
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/textile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">Textile
+                                        Engineering</a></li>
+                                <li><a href="./Details Admisson Page/automobile-details.html"
+                                        class="block px-6 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100">AutoMobile
+                                        Engineering</a></li>
+
+
+                            </ul>
+                        </li>
+
+                        <!-- Other Admission Items -->
+                        <li><a href="./admissonform.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Online
+                                Admission</a></li>
+
+                        <li><a href="./circular.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Admission
+                                Circular</a></li>
+                        <li><a href="./campus-life.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Campus
+                                Life</a></li>
+
+                        <li><a href="./tuition-fees.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main border-b border-gray-100 font-semibold">Tuition
+                                Fees</a></li>
+
+
+                    </ul>
+                </div>
+                <!-- Academic Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="#" class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Academic <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Academic Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-72 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100"><a href="./notice-board.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Notice
+                                Board</a></li>
+                        <li class="border-b border-gray-100"><a href="./syllabus.html."
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Course
+                                & Syllabus</a></li>
+                        <li class="border-b border-gray-100"><a href="./class-routine.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Student
+                                Routine</a></li>
+                        <li class="border-b border-gray-100"><a href="./academic-calendar.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">Academic
+                                Calendar</a></li>
+
+                        <li class="border-b border-gray-100"><a href="./internal-result.html"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-main font-semibold">
+                                BTEB Result </a></li>
+
+                    </ul>
+                </div>
+                <!-- Blogs Dropdown -->
+                <div class="relative dropdown group cursor-pointer py-4">
+                    <a href="news-blogs.html"
+                        class="hover:text-red-main transition flex items-center font-bold uppercase text-sm">
+                        Blogs <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+
+                    <!-- Dropdown List -->
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-4 w-56 bg-white shadow-2xl rounded-md opacity-0 invisible transform translate-y-2 transition-all duration-300 border-t-4 border-red-600 z-50">
+                        <li class="border-b border-gray-100">
+                            <a href="news-blogs.html?filter=news"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Latest
+                                News</a>
+                        </li>
+                        <li>
+                            <a href="news-blogs.html?filter=blog"
+                                class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-600 font-semibold">Our
+                                Blogs</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="./contact.html" class="hover:text-red-main">Contact</a>
+            </nav>
+
+
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="flex space-x-3 text-blue-800">
+                    <i class="fab fa-facebook cursor-pointer"></i>
+                    <i class="fab fa-youtube cursor-pointer"></i>
+                    <i class="fab fa-linkedin cursor-pointer hover:text-red-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-overlay" onclick="toggleSidebar()"></div>
+
+    <div id="mobile-sidebar">
+        .... <!-- Sidebar Header (Dark Blue) -->
+        <div class="p-6 bg-text-white flex justify-between items-center shadow-lg">
+            <div>
+                <h2 class="font-black text-sm uppercase tracking-widest">NPI MENU</h2>
+                <p class="text-[9px] text-white-500 font-bold uppercase">National Polytechnic Institute</p>
+            </div>
+            <button onclick="toggleSidebar()" class="text-3xl">&times;</button>
+        </div>
+
+        <!-- Sidebar List (Your Screenshot Design) -->
+        <div class="flex flex-col">
+            <!-- HOME -->
+            <a href="./index.html" class="mobile-link text-red-600 bg-red-50/50">
+                <span><i class="fas fa-home mr-3"></i> HOME</span>
+            </a>
+
+            <!-- ABOUT US Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-about')" class="mobile-link">
+                    <span><i class="fas fa-university mr-3 text-blue-800"></i> About Us</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-about"></i>
+                </div>
+                <div id="mob-about" class="mob-content">
+                    <a href="./at-a-glance.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">At A Glance</a>
+                    <a href="./history.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">History of
+                        NPI</a>
+                    <a href="./mission-vision.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Mission &
+                        Vision</a>
+                    <a href="./administration.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">History of
+                        NPI</a>
+                    <a href="./photo-gallery.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Mission &
+                        Vision</a>
+                </div>
+            </div>
+
+            <!-- ADMISSION Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-adm')" class="mobile-link">
+                    <span><i class="fas fa-user-graduate mr-3 text-blue-800"></i> Admission</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-adm"></i>
+                </div>
+                <div id="mob-adm" class="mob-content">
+                    <a href="./admissonform.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Online
+                        Admission</a>
+                    <a href="./circular.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Admission
+                        Circular</a>
+                    <a href="./campus-life.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Campus Life</a>
+                    <a href="./tuition-fees.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Tution Fees</a>
+                    <!-- Departments nested inside sidebar -->
+                    <div class="bg-white p-4 pl-14">
+                        <p class="text-[10px] font-black text-blue-900 mb-2 uppercase">Departments:</p>
+                        <div class="space-y-3 first-letter:uppercase text-[12px] text-gray-500">
+                            <a href="./Details Admisson Page/computer-details.html" class="block">» Computer
+                                Engineering</a>
+                            <a href="./Details Admisson Page/civil-details.html" class="block">» Civil Engineering</a>
+                            <a href="./Details Admisson Page/electrical-details.html" class="block">» Electrical
+                                Engineering</a>
+                            <a href="./Details Admisson Page/architecture-details.html" class="block">» Architecture
+                                Engineering</a>
+                            <a href="./Details Admisson Page/mechanical-details.html" class="block">» Mechanical
+                                Engineering</a>
+                            <a href="./Details Admisson Page/food-details.html" class="block">» Food Engineering</a>
+                            <a href="./Details Admisson Page/textile-details.html" class="block">» Textile
+                                Engineering</a>
+                            <a href="./Details Admisson Page//automobile-details.html" class="block">» Automobile
+                                Engineering</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACADEMIC Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-aca')" class="mobile-link">
+                    <span><i class="fas fa-book-reader mr-3 text-blue-800"></i> Academic</span>
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-aca"></i>
+                </div>
+                <div id="mob-aca" class="mob-content">
+                    <a href="./notice-board.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Notice Board</a>
+                    <a href="./class-routine.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Student
+                        Routine</a>
+                    <a href="./syllabus.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">Course &
+                        Syllabus</a>
+                    <a href="./academic-calendar.html"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">Academic
+                        Calendar</a>
+                    <a href="./internal-result.html" class="block p-4 pl-14 text-xs font-bold text-gray-500">BTEB
+                        Result</a>
+                </div>
+            </div>
+
+            <!-- NEWS & BLOGS Accordion -->
+            <div>
+                <div onclick="toggleAcc('mob-blog')" class="mobile-link">
+                    <span>
+                        <i class="fas fa-newspaper mr-3 text-blue-800"></i>
+                        News & Blogs
+                    </span>
+
+                    <i class="fas fa-chevron-down text-[10px] rotate-icon" id="ico-mob-blog"></i>
+                </div>
+
+                <div id="mob-blog" class="mob-content">
+                    <a href="./news-blogs.html?filter=news"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Latest News
+                    </a>
+
+                    <a href="./news-blogs.html?filter=blog"
+                        class="block p-4 pl-14 text-xs font-bold text-gray-500 border-b border-gray-100">
+                        Our Blogs
+                    </a>
+
+
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <a href="./contact.html" class="mobile-link">
+                <span><i class="fas fa-phone-alt mr-3 text-blue-800"></i> Contact Us</span>
+            </a>
+
+            <!-- Footer of Sidebar -->
+            <div class="p-10 flex flex-col items-center gap-6 mt-10 border-t">
+                <div class="flex gap-6 text-2xl text-[#1d4289]">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Page Title Banner -->
+    <section class="dots-bg py-20 text-center bg-white border-b relative">
+        <div class="relative z-10">
+            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-[0.4em] mb-2">Get In Touch</h4>
+            <h1 class="text-4xl md:text-6xl font-black text-[#1d4289] uppercase tracking-tight">Contact Us</h1>
+            <div class="w-24 h-2 bg-red-600 mx-auto mt-6 rounded-full shadow-lg shadow-red-200"></div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-16 flex-grow w-full">
+
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+            <!-- Left: Contact Information Cards -->
+            <div class="lg:col-span-5 space-y-6">
+                <h2
+                    class="text-3xl font-black text-gray-800 uppercase mb-8 border-l-8 border-red-600 pl-4 leading-tight">
+                    We are here to <br> <span class="text-red-600">help you!</span></h2>
+
+                <!-- Address Card -->
+                <div
+                    class="bg-white p-8 rounded-[35px] shadow-sm border border-gray-100 flex items-start gap-6 hover:shadow-xl transition duration-500">
+                    <div
+                        class="w-14 h-14 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center flex-none text-2xl shadow-inner">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-black text-gray-800 uppercase text-xs tracking-widest mb-1">Campus Location</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">173/3, Narangai Bustand, Manikgonj Sadar,
+                            Manikganj, Bangladesh.</p>
+                    </div>
+                </div>
+
+                <!-- Phone Card -->
+                <div
+                    class="bg-white p-8 rounded-[35px] shadow-sm border border-gray-100 flex items-start gap-6 hover:shadow-xl transition duration-500">
+                    <div
+                        class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center flex-none text-2xl shadow-inner">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-black text-gray-800 uppercase text-xs tracking-widest mb-1">Helpline Number</h4>
+                        <p class="text-gray-700 font-black text-lg tracking-wider">01711-349947</p>
+                        <p class="text-gray-500 text-xs mt-1 font-bold">01911-316010, 01735-782829</p>
+                    </div>
+                </div>
+
+                <!-- Email Card -->
+                <div
+                    class="bg-white p-8 rounded-[35px] shadow-sm border border-gray-100 flex items-start gap-6 hover:shadow-xl transition duration-500">
+                    <div
+                        class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center flex-none text-2xl shadow-inner">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-black text-gray-800 uppercase text-xs tracking-widest mb-1">Email Support</h4>
+                        <p class="text-gray-700 font-bold">info@npi.edu.bd</p>
+                        <p class="text-gray-500 text-xs font-medium italic mt-1">Response within 24 hours.</p>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="pt-8 flex gap-4 justify-center md:justify-start">
+                    <a href="#"
+                        class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center hover:bg-gray-800 transition shadow-lg"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-12 h-12 bg-red-600 text-white rounded-2xl flex items-center justify-center hover:bg-gray-800 transition shadow-lg"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="#"
+                        class="w-12 h-12 bg-blue-400 text-white rounded-2xl flex items-center justify-center hover:bg-gray-800 transition shadow-lg"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Right: Premium Contact Form -->
+            <div class="lg:col-span-7">
+                <div
+                    class="bg-white p-8 md:p-12 rounded-[50px] shadow-2xl border border-gray-100 relative overflow-hidden">
+                    <!-- Subtle Background Icon -->
+                    <i class="fas fa-paper-plane absolute -right-10 -top-10 text-[200px] text-gray-50 -z-0"></i>
+
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-black text-gray-800 uppercase mb-8 tracking-tighter">Send Us A Message
+                        </h3>
+
+                        <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black text-gray-400 uppercase ml-4">Full Name</label>
+                                <input type="text" placeholder="Your Name"
+                                    class="contact-input w-full px-6 py-4 bg-gray-50 border-2 border-gray-50 rounded-2xl outline-none transition">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black text-gray-400 uppercase ml-4">Mobile Number</label>
+                                <input type="number" placeholder="017XX-XXXXXX"
+                                    class="contact-input w-full px-6 py-4 bg-gray-50 border-2 border-gray-50 rounded-2xl outline-none transition">
+                            </div>
+                            <div class="md:col-span-2 space-y-2">
+                                <label
+                                    class="text-[10px] font-black text-gray-400 uppercase ml-4">Subject/Technology</label>
+                                <select
+                                    class="contact-input w-full px-6 py-4 bg-gray-50 border-2 border-gray-50 rounded-2xl outline-none transition cursor-pointer">
+                                    <option>General Inquiry</option>
+                                    <option>Computer Engineering</option>
+                                    <option>Civil Engineering</option>
+                                    <option>Electrical Engineering</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2 space-y-2">
+                                <label class="text-[10px] font-black text-gray-400 uppercase ml-4">Your Message</label>
+                                <textarea rows="4" placeholder="How can we help you?"
+                                    class="contact-input w-full px-6 py-4 bg-gray-50 border-2 border-gray-50 rounded-2xl outline-none transition"></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <button type="submit"
+                                    class="w-full bg-red-600 hover:bg-[#1d4289] text-white py-5 rounded-2xl font-black uppercase tracking-widest shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+                                    <i class="fas fa-paper-plane mr-2"></i> Send Message Now
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Google Map Section (NPI Manikganj) -->
+        <div class="mt-20">
+            <h3 class="text-xl font-black text-gray-800 uppercase mb-8 text-center tracking-widest italic">Find Us On
+                Google Maps</h3>
+            <div class="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white h-[450px]">
+                <!-- Replace this iframe with NPI Manikganj's specific location if different -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.601569485743!2d90.0034639!3d23.8682855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fec0f4f9f7f4a7%3A0x6e8e8e8e8e8e8e8e!2sNational%20Polytechnic%20Institute!5e0!3m2!1sen!2sbd!4v1716654321098!5m2!1sen!2sbd"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Area (Full Width Background, Centered Content) -->
+    <footer class="w-full bg-[#0f172a] text-white pt-20 pb-10 border-t-8 border-red-600 relative overflow-hidden">
+    
+    <!-- Decorative Pattern Overlay (পুরো ব্যাকগ্রাউন্ড জুড়ে থাকবে) -->
+    <div class="absolute inset-0 dots-bg opacity-5 pointer-events-none"></div>
+
+    <!-- Inner Container - কন্টেন্ট মাঝখানে রাখার জন্য mx-auto এবং max-w-7xl -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+            <!-- Column 1: About Institute -->
+            <div class="space-y-6">
+                <img src="./images/Cover Page -Operating System-F.jpg" alt="NPI Logo"
+                    class="h-16 bg-white p-1 rounded-sm shadow-lg">
+                <p class="text-gray-400 text-sm leading-relaxed text-justify italic">
+                    National Polytechnic Institute (NPI) is a premier technical institution committed to
+                    producing world-class engineers. With modern labs and expert faculty, we bridge the gap
+                    between education and industry.
+                </p>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-red-600 transition duration-500 shadow-xl border border-white/5"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="lg:pl-10">
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Information</h4>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a href="./admissonform.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Online Admission</a></li>
+                    <li><a href="./internal-result.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Board Results</a></li>
+                    <li><a href="./notice-board.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Academic Notice</a></li>
+                    <li><a href="./class-routine.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Class Routine</a></li>
+                    <li><a href="./syllabus.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Syllabus Download</a></li>
+                    <li><a href="./news-blogs.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Academic Notice</a></li>
+                    <li><a href="./circular.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Class Routine</a></li>
+                    <li><a href="./contact.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Syllabus Download</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Engineering Dept. -->
+            <div>
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Departments</h4>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a href="./Details Admisson Page/computer-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Computer Science & Tech</a></li>
+                    <li><a href="./Details Admisson Page/electrical-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Electrical Technology</a></li>
+                    <li><a href="./Details Admisson Page/civil-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Civil Technology</a></li>
+                    <li><a href="./Details Admisson Page/mechanical-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Mechanical Technology</a></li>
+                    <li><a href="./Details Admisson Page/food-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Food Engineering</a></li>
+                    <li><a href="./Details Admisson Page/automobile-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Automobile Technology</a></li>
+                    <li><a href="./Details Admisson Page/architecture-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Architecture Technology</a></li>
+                    <li><a href="./Details Admisson Page/textile-details.html" class="hover:text-red-500 hover:translate-x-2 transition-all inline-block italic">» Textile Engineering</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact Us -->
+            <div class="space-y-6">
+                <h4 class="text-lg font-black uppercase tracking-widest mb-8 border-l-4 border-red-600 pl-4">Contact Us</h4>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 bg-red-600/10 text-red-600 rounded-xl flex items-center justify-center flex-none group-hover:bg-red-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-map-marker-alt"></i></div>
+                        <p class="text-sm text-gray-400 italic">173/3, Narangai Bustand, Manikgonj Sadar, Manikganj.</p>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-blue-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-phone-alt"></i></div>
+                        <p class="text-sm text-gray-400 font-bold tracking-widest">01711-349947, 01911-316010</p>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 bg-purple-600/10 text-purple-500 rounded-xl flex items-center justify-center flex-none group-hover:bg-purple-600 group-hover:text-white transition duration-500 shadow-lg"><i class="fas fa-envelope"></i></div>
+                        <p class="text-sm text-gray-400 font-bold">info@npi.edu.bd</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.4em]">
+                © 2024 <span class="text-white uppercase font-black tracking-widest">National Polytechnic Institute</span>. All Rights Reserved.
+            </p>
+            <div class="flex space-x-6 text-[10px] font-black uppercase text-gray-500 tracking-widest items-center">
+                <a href="#" class="hover:text-red-500 transition">Privacy Policy</a>
+                <span class="text-white opacity-20">|</span>
+                <a href="#" class="text-white hover:text-red-600 transition underline underline-offset-4 decoration-red-600">Developed by NPI IT Team</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // ১. সাইডবার ওপেন/ক্লোজ
+        function toggleSidebar() {
+            document.getElementById('mobile-sidebar').classList.toggle('open');
+            document.getElementById('mobile-overlay').classList.toggle('show');
+
+            // সাইডবার খুললে বডির স্ক্রল বন্ধ করা
+            if (document.getElementById('mobile-sidebar').classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // ২. মোবাইল একর্ডিয়ন ড্রপডাউন
+        function toggleAcc(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('ico-' + id);
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        function toggleAcc(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('ico-' + id);
+
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+    </script>
+
+
+</body>
+
+</html>
