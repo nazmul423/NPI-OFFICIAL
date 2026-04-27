@@ -107,6 +107,108 @@
             background: #f1f5f9;
             color: #dc2626;
         }
+        
+        /* ড্রপডাউন হোভার লজিক */
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+        /* ১. মেইন ড্রপডাউন (Admission) হোভার করলে নিচের দিকে খুলবে */
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* ২. সাব-মেনু (Departments এর লিস্ট) ডিফল্টভাবে লুকিয়ে থাকবে এবং মেইন মেনুর ডানে থাকবে */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            /* একদম ডান পাশে পাঠাবে */
+            top: -4px;
+            margin-left: 2px;
+        }
+
+        /* ৩. Departments এ মাউস রাখলে সাব-মেনু (ডিপার্টমেন্টের লিস্ট) দেখাবে */
+        .group-hover-submenu:hover .submenu {
+            display: block;
+        }
+
+        :root {
+            --npi-red: #ed1c24;
+            --npi-blue: #1d4289;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ১. ডেস্কটপ ও ট্যাবলেট ড্রপডাউন (Hover Logic) - ১০২৪ পিক্সেলের উপরে কাজ করবে */
+        @media (min-width: 1024px) {
+            .dropdown:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .group-hover-submenu:hover>.submenu {
+                display: block !important;
+            }
+        }
+
+        /* ২. সাব-মেনু (Departments) পজিশন - পিসির জন্য */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 2px;
+        }
+
+
+        :root {
+            --npi-red: #ed1c24;
+            --npi-blue: #1d4289;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        /* ১. ডেস্কটপ ও ট্যাবলেট ড্রপডাউন (Hover Logic) */
+        @media (min-width: 1024px) {
+            .dropdown:hover>.dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .group-hover-submenu:hover>.submenu {
+                display: block !important;
+            }
+        }
+
+        /* পিসি সাব-মেনু পজিশন */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 2px;
+        }
+
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
     </style>
 </head>
 
@@ -309,7 +411,7 @@
     <div id="mobile-overlay" onclick="toggleSidebar()"></div>
 
     <div id="mobile-sidebar">
-        .... <!-- Sidebar Header (Dark Blue) -->
+         <!-- Sidebar Header (Dark Blue) -->
         <div class="p-6 bg-text-white flex justify-between items-center shadow-lg">
             <div>
                 <h2 class="font-black text-sm uppercase tracking-widest">NPI MENU</h2>
